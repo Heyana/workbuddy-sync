@@ -19,6 +19,11 @@
 - **提交代码 = git add -A + git commit + git push**：当说"提交代码"时，自动暂存所有变更、提交并推送，不用追问
 
 ## 小红书 MCP 使用规则
-- **搜索必须逐个进行**，不要并行多个 search_feeds 调用
+- **MCP 名称**：RedNote-MCP（rednote-mcp npm 包，stdio 模式）
+- **配置文件**：`~/.workbuddy/mcp.json` → `"RedNote-MCP"`
+- **工具名**：`mcp__RedNote-MCP__search_notes` / `mcp__RedNote-MCP__get_note_content` / `mcp__RedNote-MCP__get_note_comments` / `mcp__RedNote-MCP__login`
+- 参数：`search_notes` 需要 `keywords`(string) 和可选 `limit`(number)；`get_note_content` 和 `get_note_comments` 需要 `url`(string)
+- **搜索必须逐个进行**，不要并行多个调用
 - 并行搜索容易触发小红书风控，导致请求超时
 - 每次搜索间隔至少 2-3 秒
+- 注：工具以蛇形命名（snake_case），如 `search_notes` 而非 `searchNotes`

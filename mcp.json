@@ -1,11 +1,5 @@
 {
   "mcpServers": {
-    "xiaohongshu-mcp": {
-      "type": "streamable-http",
-      "url": "http://localhost:18060/mcp",
-      "timeout": 300000,
-      "disabled": true
-    },
     "RedNote-MCP": {
       "command": "C:\\Users\\hy\\.workbuddy\\binaries\\node\\versions\\22.22.2\\npx.cmd",
       "args": [
