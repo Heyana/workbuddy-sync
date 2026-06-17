@@ -1,0 +1,249 @@
+[
+  {
+    "id": "hy3-preview",
+    "name": "hy3-preview",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "hunyuan-chat",
+    "name": "hunyuan-chat",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "hunyuan-2.0-thinking",
+    "name": "hunyuan-2.0-thinking",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "deepseek-v4-pro",
+    "name": "deepseek-v4-pro",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false,
+    "reasoning": {
+      "supportedEfforts": [
+        "high"
+      ]
+    }
+  },
+  {
+    "id": "deepseek-v4-flash",
+    "name": "deepseek-v4-flash",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "deepseek-v3-2-volc",
+    "name": "deepseek-v3-2-volc",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "deepseek-v3-1",
+    "name": "deepseek-v3-1",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "deepseek-v3-0324",
+    "name": "deepseek-v3-0324",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "deepseek-r1",
+    "name": "deepseek-r1",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-5.2",
+    "name": "glm-5.2",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-5.1",
+    "name": "glm-5.1",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-5.0",
+    "name": "glm-5.0",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-5.0-turbo",
+    "name": "glm-5.0-turbo",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-5v-turbo",
+    "name": "glm-5v-turbo",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-4.7",
+    "name": "glm-4.7",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "glm-4.6",
+    "name": "glm-4.6",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "kimi-k2.6",
+    "name": "kimi-k2.6",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "kimi-k2.5",
+    "name": "kimi-k2.5",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "minimax-m3",
+    "name": "minimax-m3",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "minimax-m2.7",
+    "name": "minimax-m2.7",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "minimax-m2.5",
+    "name": "minimax-m2.5",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  },
+  {
+    "id": "auto",
+    "name": "auto",
+    "vendor": "Custom",
+    "url": "http://127.0.0.1:8002/v1",
+    "apiKey": "sk-bJUZOXnPIgO3YvYLDFXAl0nCI4zyOkBvAotPMRMIWFE",
+    "supportsToolCall": true,
+    "supportsImages": true,
+    "supportsReasoning": true,
+    "useCustomProtocol": false
+  }
+]

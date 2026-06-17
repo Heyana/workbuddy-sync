@@ -1,0 +1,45 @@
+{
+  "claw": {
+    "users": {
+      "7977cef2-b62c-4509-a275-2f9e6cedc2a6": {
+        "channels": {
+          "wechatmp": {
+            "enabled": true,
+            "connectionMode": "webhook"
+          }
+        }
+      },
+      "2d589503-5cb1-487b-a974-1a2d2d005497": {
+        "channels": {
+          "wechatmp": {
+            "enabled": true,
+            "connectionMode": "webhook"
+          }
+        }
+      }
+    },
+    "legacyOwnerUid": "c899aa72-173c-4a16-a71a-e2abdd6ac3de",
+    "channels": {
+      "wechatmp": {
+        "enabled": true,
+        "connectionMode": "webhook"
+      }
+    }
+  },
+  "sandbox": {
+    "extraAllowWrite": [
+      "~/.tencent-cloudq",
+      "~/.andonq",
+      "~/.xiaoe-cloud",
+      "~/.config/wecom/",
+      "~/.lark-cli",
+      "~/.lark-channel/",
+      "~/.dws",
+      "/tmp/dws-cache",
+      "~/.tmeet",
+      "~/Library/Application Support/tmeet"
+    ],
+    "versionControl": true,
+    "deleteProtection": true
+  }
+}

@@ -1,0 +1,23 @@
+# Ignore everything by default
+*
+
+# === Config files ===
+!MEMORY.md
+!SOUL.md
+!IDENTITY.md
+!USER.md
+!mcp.json
+!mcp-approvals.json
+!settings.json
+!models.json
+!.gitignore
+!README.md
+
+# === Skills (user-level only) ===
+!skills/
+!skills/**
+
+# === Connector defaults (MCP configs, no auth tokens) ===
+!connectors/
+!connectors/default/
+!connectors/default/mcp.json
