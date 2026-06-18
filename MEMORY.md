@@ -29,10 +29,9 @@
 - osvtoolbox：ffmpeg 编码优化（RTX 4070 GPU）
 - Flutter 'dots' 个人追踪 App：Timeline 功能开发中
 
-## Flutter 桌面截图生态
-- **极不成熟，全部第三方包不可用**（screen_capturer/fork/just_screenshot 全部失败）
-- 唯一稳定路径：Win32 GDI FFI 自研 + image 包 PNG 编码
-- 选区 overlay 需自研全屏窗口，参考 PinchClip（Electron+MIT）模式
+## Flutter 桌面截图
+- **不适合。** 经 8 轮验证无可用方案
+- 截图应改用 Electron（BrowserWindow + desktopCapturer），剪贴板留在 Flutter
 
 ## MCP 使用规则
 - RedNote-MCP 搜索必须逐个进行，间隔 2-3 秒
