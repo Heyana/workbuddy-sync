@@ -30,10 +30,9 @@
 - Flutter 'dots' 个人追踪 App：Timeline 功能开发中
 
 ## Flutter 桌面截图生态
-- 极不成熟，无成熟可用第三方包
-- screen_capturer bug #47 未修，just_screenshot 编译不过
-- 唯一可靠方案：Win32 GDI 自研（CreateDC/BitBlt/GetDIBits）+ image 包 PNG 编码
-- 选区参考 PinchClip：主窗口 resize 全屏透明 + CustomPaint 拖拽
+- **极不成熟，全部第三方包不可用**（screen_capturer/fork/just_screenshot 全部失败）
+- 唯一稳定路径：Win32 GDI FFI 自研 + image 包 PNG 编码
+- 选区 overlay 需自研全屏窗口，参考 PinchClip（Electron+MIT）模式
 
 ## MCP 使用规则
 - RedNote-MCP 搜索必须逐个进行，间隔 2-3 秒
