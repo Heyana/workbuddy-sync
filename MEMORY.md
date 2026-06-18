@@ -1,29 +1,34 @@
-# 全项目偏好
+# 用户级偏好记忆
 
 ## Flutter 项目通用规则
-- **禁止 import `package:flutter/widgets.dart`**：shadcn_flutter 已包含所有需要的 widget（Div/WText/WIcon/WButton/WSvg 等），无需额外导入
-- **禁止 import `package:flutter/material.dart`**（仅 main.dart 例外，MaterialApp.router 需要）
-- **禁止 `Row`、`Column`**：`Div` + className（`row`/`col`/`row-aic`/`col-c` 等）全覆盖所有 flex 布局需求
-- 页面文件只 import：`shadcn_flutter/shadcn_flutter.dart` + `fluttersdk_wind/fluttersdk_wind.dart` + `my-wind/div.dart`
-- 布局必须使用 fluttersdk_wind（Tailwind CSS 风格）+ my-wind/div.dart 的 Div 封装
-- shadcn_flutter import hide：`Scaffold`, `NavigationBar`, `ThemeMode`
-- shadcn_flutter 0.0.52 的 **LucideIcons 使用 camelCase**（如 `shoppingCart`、`chevronDown`、`flaskConical`），不是 snake_case。不确定时读 `Pub/Cache/hosted/pub.flutter-io.cn/shadcn_flutter-{ver}/lib/src/icons/lucide_icons.dart` 确认，禁止猜
-- **WText 动态颜色用 `foregroundColor:`**，不可用 `style: TextStyle(...)`（style 类型是 WindStyle?）
-- **Wind `bg-[#...]` 只支持 6 位 hex（RRGGBB）**，不支持 8 位 ARGB。动态色必须取后 6 位：`'bg-[#${color.toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}]'`
-- **material.dart 只在 main.dart 允许**（MaterialApp.router 需要），其他所有文件禁止 import。main.dart 的 shadcn import 必须 hide ThemeMode
-- 字符串插值单变量不加花括号：`$index` 而非 `${index}`
-- StatelessWidget 子类构造函数加 `const`
+- 技术栈：shadcn_flutter + fluttersdk_wind + LucideIcons
+- 禁止使用 material/forui 组件（main.dart 例外）
+- 布局使用 Div + Wind className（row/col/row-aic/col-c 等），禁止 Flutter 原生 Expanded/Spacer/Flexible
+- flex-1 用 WDiv(className: 'flex-1', children: [...])
+- 页面只 import shadcn_flutter + wind + my-wind/div
+- shadcn_flutter import 需 hide Scaffold, NavigationBar, ThemeMode
+- LucideIcons 使用 camelCase
+- WText 动态颜色用 foregroundColor:，非 style:
+- Wind bg-[#...] 只支持 6 位 hex
+- 查询必须用 proper where 子句，禁止 '1=1' 原始 SQL
+
+## 同步规则
+- 修改 `~/.workbuddy/` 下文件时，必须同步更新 `D:\hxy\github\workbuddy-sync/` 中对应文件
+- 需要同步的文件：`mcp.json`、`MEMORY.md`、`models.json`、`settings.json`、`skills/`、`connectors/`
+- 同步后一并 commit + push 到 GitHub
 
 ## 工作习惯
-- 代码修改完成后，**自动**更新当日记忆（`.workbuddy/memory/YYYY-MM-DD.md`），按需更新空间记忆（`.workbuddy/memory/MEMORY.md`）——不用等用户提醒
-- **提交代码 = git add -A + git commit + git push**：当说"提交代码"时，自动暂存所有变更、提交并推送，不用追问
+- 代码修改完成后自动更新记忆，不用等提醒
+- "提交代码" = git add -A + commit + push 全流程
+- 完成修改后自动 commit 并 push
 
-## 小红书 MCP 使用规则
-- **MCP 名称**：RedNote-MCP（rednote-mcp npm 包，stdio 模式）
-- **配置文件**：`~/.workbuddy/mcp.json` → `"RedNote-MCP"`
-- **工具名**：`mcp__RedNote-MCP__search_notes` / `mcp__RedNote-MCP__get_note_content` / `mcp__RedNote-MCP__get_note_comments` / `mcp__RedNote-MCP__login`
-- 参数：`search_notes` 需要 `keywords`(string) 和可选 `limit`(number)；`get_note_content` 和 `get_note_comments` 需要 `url`(string)
-- **搜索必须逐个进行**，不要并行多个调用
-- 并行搜索容易触发小红书风控，导致请求超时
-- 每次搜索间隔至少 2-3 秒
-- 注：工具以蛇形命名（snake_case），如 `search_notes` 而非 `searchNotes`
+## 当前项目
+- Flutter 资产记账 App（WorkBuddy-Space/asset_manager）：WebDAV 多账号文件级增量同步
+- Electron 媒体管理器（electron-media-manager）：Go 后端 + SQLite
+- osvtoolbox：ffmpeg 编码优化（RTX 4070 GPU）
+- Flutter 'dots' 个人追踪 App：Timeline 功能开发中
+
+## MCP 使用规则
+- RedNote-MCP 搜索必须逐个进行，间隔 2-3 秒
+- 并行搜索易触发风控
+- 工具名使用 snake_case
