@@ -8,7 +8,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 256000
   },
   {
     "id": "hunyuan-chat",
@@ -19,7 +20,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 256000
   },
   {
     "id": "hunyuan-2.0-thinking",
@@ -30,7 +32,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 256000
   },
   {
     "id": "deepseek-v4-pro",
@@ -42,11 +45,7 @@
     "supportsImages": true,
     "supportsReasoning": true,
     "useCustomProtocol": false,
-    "reasoning": {
-      "supportedEfforts": [
-        "high"
-      ]
-    }
+    "maxInputTokens": 1000000
   },
   {
     "id": "deepseek-v4-flash",
@@ -57,7 +56,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 1000000
   },
   {
     "id": "deepseek-v3-2-volc",
@@ -68,7 +68,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 128000
   },
   {
     "id": "deepseek-v3-1",
@@ -79,7 +80,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 128000
   },
   {
     "id": "deepseek-v3-0324",
@@ -90,7 +92,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 128000
   },
   {
     "id": "deepseek-r1",
@@ -101,7 +104,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 128000
   },
   {
     "id": "glm-5.2",
@@ -112,7 +116,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 1000000
   },
   {
     "id": "glm-5.1",
@@ -123,7 +128,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "glm-5.0",
@@ -134,7 +140,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 128000
   },
   {
     "id": "glm-5.0-turbo",
@@ -145,7 +152,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "glm-5v-turbo",
@@ -156,7 +164,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "glm-4.7",
@@ -167,7 +176,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "glm-4.6",
@@ -178,7 +188,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "kimi-k2.6",
@@ -189,7 +200,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 256000
   },
   {
     "id": "kimi-k2.5",
@@ -200,7 +212,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 1000000
   },
   {
     "id": "minimax-m3",
@@ -211,7 +224,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 1000000
   },
   {
     "id": "minimax-m2.7",
@@ -222,7 +236,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "minimax-m2.5",
@@ -233,7 +248,8 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 200000
   },
   {
     "id": "auto",
@@ -244,6 +260,7 @@
     "supportsToolCall": true,
     "supportsImages": true,
     "supportsReasoning": true,
-    "useCustomProtocol": false
+    "useCustomProtocol": false,
+    "maxInputTokens": 168000
   }
 ]
