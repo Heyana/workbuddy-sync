@@ -4,6 +4,7 @@
 - 技术栈：shadcn_flutter + fluttersdk_wind + LucideIcons
 - 禁止使用 material/forui 组件（main.dart 例外）
 - 布局使用 Div + Wind className（row/col/row-aic/col-c 等），禁止 Flutter 原生 Expanded/Spacer/Flexible
+  - 原因：Wind Column/Row 被 WindFlexOverflowScope 包裹，原生 FlexParentData 不兼容
 - flex-1 用 WDiv(className: 'flex-1', children: [...])
 - 页面只 import shadcn_flutter + wind + my-wind/div
 - shadcn_flutter import 需 hide Scaffold, NavigationBar, ThemeMode
