@@ -12,6 +12,7 @@
 |------|------|
 | Flutter 项目通用规则 | `topics/flutter.md` |
 | Wind 配置规范 | `topics/wind-config.md` |
+| 编码风格 | `topics/coding-style.md` |
 | shadcn-vue 使用规范 | `topics/shadcn-vue.md` |
 | 前端项目通用规则 | `topics/frontend-rules.md` |
 | 项目结构规范 | `topics/project-structure.md` |
