@@ -62,8 +62,7 @@
 - osvtoolbox：ffmpeg 编码优化（RTX 4070 GPU）
 - Flutter 'dots' 个人追踪 App：Timeline 功能开发中
 - Wails3 demo（wails3_test_vue_ts）：Vue3+TSX+Go / v3.0.0-alpha2.104，文件拖放+窗口控制+Frameless，前端已迁 shadcn-vue
-- shadcn-vue-demo：shadcn-vue 组件库试验场，reka-nova+stone+noto-sans，全局无 border（Card 除外）
-- PureRaw（构想中）：照片筛选工具，Wails3 + RAW解码 + AI评分 + 快捷键操作
+- PureRaw（D:\hxy\github\PureRaw）：照片筛选工具，Wails3 + shadcn-vue + Go，三栏布局+快捷键评分(1-5)+导航(←→)
 
 ## Flutter 桌面截图
 - **不适合。** 经 8 轮验证无可用方案
