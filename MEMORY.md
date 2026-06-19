@@ -6,17 +6,22 @@
 
 > ⚠️ **同步规则**：修改 `memory/topics/` 下任意文件后，必须同步到 `D:\hxy\github\workbuddy-sync/`，并 commit + push。
 
-## 索引
+## 🔴 通用（每次必读）
 
 | 主题 | 文件 |
 |------|------|
-| Flutter 项目通用规则 | `topics/flutter.md` |
-| Wind 配置规范 | `topics/wind-config.md` |
 | 编码风格 | `topics/coding-style.md` |
-| shadcn-vue 使用规范 | `topics/shadcn-vue.md` |
-| 前端项目通用规则 | `topics/frontend-rules.md` |
-| 项目结构规范 | `topics/project-structure.md` |
 | 工作习惯 | `topics/work-habits.md` |
+| 项目结构规范 | `topics/project-structure.md` |
 | MCP 使用规则 | `topics/mcp-rules.md` |
-| 当前项目列表 | `topics/current-projects.md` |
-| Flutter 桌面截图 | `topics/flutter-screenshot.md` |
+
+## 🟢 按项目按需
+
+| 主题 | 文件 | 适用场景 |
+|------|------|----------|
+| Flutter 项目通用规则 | `topics/flutter.md` | Flutter 项目 |
+| Wind 配置规范 | `topics/wind-config.md` | Flutter + Wind |
+| shadcn-vue 使用规范 | `topics/shadcn-vue.md` | Vue3 前端项目 |
+| 前端项目通用规则 | `topics/frontend-rules.md` | 任意前端项目 |
+| 当前项目列表 | `topics/current-projects.md` | 新建/切换项目时 |
+| Flutter 桌面截图 | `topics/flutter-screenshot.md` | Flutter 截图需求 |
