@@ -4,6 +4,8 @@
 > 
 > **维护原则**：此处是个人开发习惯与排坑知识库。每次踩坑、学到新规则、项目有新约定，立刻更新对应 topic。保持精炼——只记结论和关键约束，不记推导过程。频繁更新，但每次只动相关的那一个文件。
 
+> ⚠️ **同步规则**：修改 `memory/topics/` 下任意文件后，必须同步到 `D:\hxy\github\workbuddy-sync/`，并 commit + push。
+
 ## 索引
 
 | 主题 | 文件 |
@@ -13,7 +15,6 @@
 | shadcn-vue 使用规范 | `topics/shadcn-vue.md` |
 | 前端项目通用规则 | `topics/frontend-rules.md` |
 | 项目结构规范 | `topics/project-structure.md` |
-| 同步规则 | `topics/sync-rules.md` |
 | 工作习惯 | `topics/work-habits.md` |
 | MCP 使用规则 | `topics/mcp-rules.md` |
 | 当前项目列表 | `topics/current-projects.md` |
