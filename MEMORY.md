@@ -1,6 +1,9 @@
 # 用户级偏好记忆
 
-## Flutter 项目通用规则
+## 前端项目通用规则
+- **Tailwind 语义类名**：布局容器（页面、section、wrapper）必须有语义化 class 名方便定位；shadcn 组件本身不需要额外类名
+  - 需要：`<div class="feature-list p-4">`、`<div class="page-wrapper">`、`<section class="sidebar">`
+  - 不需要：`<Button class="my-btn">`、`<Card class="my-card">`（组件标签已可定位）
 - 技术栈：shadcn_flutter + fluttersdk_wind (^1.1.0) + LucideIcons
 - 禁止使用 material/forui 组件（main.dart 例外）
 - 布局使用 WDiv + Wind className（row/col/row-aic/col-c 等），禁止 Flutter 原生 Spacer/Flexible
@@ -58,7 +61,7 @@
 - Electron 媒体管理器（electron-media-manager）：Go 后端 + SQLite
 - osvtoolbox：ffmpeg 编码优化（RTX 4070 GPU）
 - Flutter 'dots' 个人追踪 App：Timeline 功能开发中
-- Wails3 demo（wails3_test_vue_ts）：Vue3+TSX+NaiveUI / Go / v3.0.0-alpha2.104，文件拖放+窗口控制+Frameless
+- Wails3 demo（wails3_test_vue_ts）：Vue3+TSX+Go / v3.0.0-alpha2.104，文件拖放+窗口控制+Frameless，前端已迁 shadcn-vue
 - shadcn-vue-demo：shadcn-vue 组件库试验场，reka-nova+stone+noto-sans，全局无 border（Card 除外）
 - PureRaw（构想中）：照片筛选工具，Wails3 + RAW解码 + AI评分 + 快捷键操作
 
