@@ -8,6 +8,7 @@
 |------|------|
 | Flutter 项目通用规则 | `topics/flutter.md` |
 | Wind 配置规范 | `topics/wind-config.md` |
+| shadcn-vue 使用规范 | `topics/shadcn-vue.md` |
 | 前端项目通用规则 | `topics/frontend-rules.md` |
 | 项目结构规范 | `topics/project-structure.md` |
 | 同步规则 | `topics/sync-rules.md` |
