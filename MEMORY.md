@@ -59,6 +59,44 @@
 - 完成修改后自动 commit 并 push
 - 包管理优先使用 yarn；如遇 yarn 问题可回退 npm
 
+## 项目结构规范
+**核心原则：文件短小精悍，命名分层清晰，单个文件不超 200 行。**
+
+### 前端 (Vue/React/TSX)
+```
+src/
+├── pages/          # 路由页面组件（一个路由一个文件）
+├── views/          # 视图片段（页面内嵌的子视图）
+├── components/     # 可复用 UI 组件
+│   ├── ui/         # shadcn 等基础组件
+│   └── controls/   # 自定义控件（TitleBar 等非 shadcn 组件）
+├── composables/    # Hooks / 组合式函数
+├── stores/         # Pinia/Vuex 状态管理
+├── api/            # API 请求层（按模块拆分）
+│   └── modules/
+├── router/         # 路由配置
+├── utils/          # 纯工具函数
+├── lib/            # 共享库（cn, constants 等）
+├── types/          # TypeScript 类型定义
+├── styles/         # 全局样式
+└── App.tsx         # 根组件（仅布局 + RouterView，不入业务逻辑）
+```
+
+### 后端 (Go)
+```
+├── handlers/       # 请求处理器（薄层，仅解析+调用 service）
+├── services/       # 业务逻辑
+├── models/         # 数据模型
+├── middleware/     # 中间件
+├── utils/          # 工具函数
+└── main.go         # 入口（初始化 + 注册路由）
+```
+
+### 通用规则
+- **单文件长度**：不超过 200 行，超过即拆分
+- **分层边界**：pages 不直接调 api，经 composables/stores；handlers 不写业务逻辑，调 services
+- **命名**：kebab-case 文件，PascalCase 组件，camelCase 函数
+
 ## 当前项目
 - Flutter 资产记账 App（WorkBuddy-Space/asset_manager）：WebDAV 多账号文件级增量同步
 - Electron 媒体管理器（electron-media-manager）：Go 后端 + SQLite
