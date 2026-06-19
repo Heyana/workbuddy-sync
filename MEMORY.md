@@ -93,7 +93,7 @@ src/
 ```
 
 ### 通用规则
-- **单文件长度**：不超过 200 行，超过即拆分
+- **单文件长度**：尽量保持在 200-300 行内，职责单一；明显超长的拆
 - **分层边界**：pages 不直接调 api，经 composables/stores；handlers 不写业务逻辑，调 services
 - **命名**：kebab-case 文件，PascalCase 组件，camelCase 函数
 
