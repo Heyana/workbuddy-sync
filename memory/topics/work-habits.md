@@ -4,3 +4,4 @@
 - "提交代码" = git add -A + commit + push 全流程
 - 完成修改后自动 commit 并 push
 - 包管理优先使用 yarn；如遇 yarn 问题可回退 npm
+- **大型任务先 spec 再闭环**：大任务先出一个 spec（计划/步骤文档），然后逐项执行闭环，防止上下文过长导致信息丢失
