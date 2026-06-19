@@ -1,0 +1,17 @@
+# Flutter 项目通用规则
+
+- 技术栈：shadcn_flutter + fluttersdk_wind (^1.1.0) + LucideIcons
+- 禁止使用 material/forui 组件（main.dart 例外）
+- 布局使用 WDiv + Wind className（row/col/row-aic/col-c 等），禁止 Flutter 原生 Spacer/Flexible
+  - 原因：Wind Column/Row 被 WindFlexOverflowScope 包裹，原生 FlexParentData 不兼容
+  - **例外**：Stack 内部必须用 `Expanded`/`Positioned.fill`（不能用 WDiv 替代 flex-1）
+- flex-1 用 WDiv(className: 'flex-1', children: [...])，但禁止嵌套 flex-1（内部 Expanded > Expanded 冲突）
+- Spacer 禁止，用 `WDiv(className: 'flex-1')` 替代
+- 浮动元素陷阱：WDiv(className: 'relative') 不能让 Positioned 工作，必须用 `Stack` 包裹
+  - 正确结构：`Stack(children: [Positioned.fill(child: 主内容), Positioned(bottom: x, child: 浮动元素)])`
+- 页面只 import shadcn_flutter + fluttersdk_wind + my-wind/div
+- shadcn_flutter import 需 hide Scaffold, NavigationBar, ThemeMode
+- LucideIcons 使用 camelCase
+- WText 动态颜色用 foregroundColor:，非 style:
+- Wind bg-[#...] 只支持 6 位 hex
+- 查询必须用 proper where 子句，禁止 '1=1' 原始 SQL
