@@ -2,6 +2,8 @@
 
 > 仓库：`D:\hxy\github\shadcn-vue` (`unovue/shadcn-vue`, v2.7.4, MIT)
 > 
+> 🔍 底层依赖 reka-ui 分析见：[reka-ui.md](reka-ui.md) — provide/inject 链路、薄封装陷阱排查
+> 
 > 分析时间：2026-06-20
 > 
 > 源码格式：registry JSON（含内联 .vue 源码），路径 `apps/v4/public/r/styles/new-york-v4/`
