@@ -247,7 +247,7 @@
 (async function() {
   const base = location.pathname.replace(/\/[^/]*$/, '');
   const topicsBase = 'topics/';
-  const MEMORY_MD = 'MEMORY.md';
+  const MEMORY_MD = '../MEMORY.md';
 
   async function fetchMD(path) {
     const resp = await fetch(path);
