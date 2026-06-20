@@ -24,6 +24,7 @@
 | Flutter 项目通用规则 | `topics/flutter.md` | Flutter 项目 |
 | Wind 配置规范 | `topics/wind-config.md` | Flutter + Wind |
 | shadcn-vue 使用规范 | `topics/shadcn-vue.md` | Vue3 前端项目 |
+| shadcn-vue MCP Server | `topics/shadcn-vue-mcp.md` | 接入 MCP 或安全审计时 |
 | Impeccable 设计工具集 | `topics/impeccable.md` | 前端 UI 设计时 |
 | 前端项目通用规则 | `topics/frontend-rules.md` | 任意前端项目 |
 | 重构策略（血泪教训） | `topics/frontend-rules.md` | 重构前必读 — 逐模块渐进、禁止全量替换 |

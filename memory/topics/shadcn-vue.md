@@ -1,6 +1,8 @@
 # shadcn-vue 使用规范
 
 > 血泪教训：绝对不要手动复制 shadcn 组件文件，必须用 CLI。否则 CSS（动画/定位/过渡）全部丢失。
+> 
+> 📡 MCP Server 分析见：[shadcn-vue-mcp.md](shadcn-vue-mcp.md) — 源码审查、安全评估、集成方案
 
 ## 核心命令
 
