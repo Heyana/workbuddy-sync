@@ -29,3 +29,10 @@
 | 重构策略（血泪教训） | `topics/frontend-rules.md` | 重构前必读 — 逐模块渐进、禁止全量替换 |
 | 当前项目列表 | `topics/current-projects.md` | 新建/切换项目时 |
 | Flutter 桌面截图 | `topics/flutter-screenshot.md` | Flutter 截图需求 |
+
+## 📍 项目备份位置
+
+| 项目 | 路径 | 说明 |
+|------|------|------|
+| vue3_zui (v2 当前) | `D:\hxy\github\vue3_zui` | 干净重建的 ZUI v2，无 v1 legacy |
+| vue3_zui_backup | `D:\hxy\github\vue3_zui_backup` | 2026-06-20 备份，含完整 v1 + v2 代码
