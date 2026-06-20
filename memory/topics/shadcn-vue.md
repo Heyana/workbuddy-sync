@@ -65,4 +65,11 @@ import { ArrowUpIcon, GitBranchIcon } from '@lucide/vue'
 - ❌ 不要手动从 GitHub 复制 `.vue` 组件文件到项目
 - ❌ 不要用 default import：`import Button from ...`（shadcn-vue 是命名导出）
 - ❌ 不要用错误的图标库（如 `lucide-vue-next`、`lucide-vue` 的 default import 等）
-- ❌ 组件 class 不要额外加自定义类名定位（`<Button class="my-btn">`），组件标签本身已可定位；布局容器才需要语义化 class
+- ❌ 组件 class 不要额外加自定义类名定位（`<Button class="my-btn">">），组件标签本身已可定位；布局容器才需要语义化 class
+
+## 常见坑
+
+### CSS 无样式
+- `shadcn-vue init` 生成的 CSS 文件必须在 `main.ts` 中显式 import，否则 Tailwind 不会注入页面
+- CSS @import 路径是标准写法无需修改：`@import "tw-animate-css"` 和 `@import "shadcn-vue/tailwind.css"` 通过 exports 的 style 字段映射到实际文件
+- 不要给这些路径加 `/dist/` 前缀，会破坏 exports 解析

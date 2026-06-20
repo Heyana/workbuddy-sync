@@ -4,5 +4,7 @@
 - "提交代码" = git add -A + commit + push 全流程
 - 完成修改后自动 commit 并 push
 - 包管理优先使用 yarn；如遇 yarn 问题可回退 npm
+- **yarn 国内慢**：项目根目录放 `.yarnrc` 设 `registry "https://registry.npmmirror.com"`
+- **yarn 报 `--use-system-ca is not allowed`**：前面加 `NODE_OPTIONS=""`，如 `NODE_OPTIONS="" yarn install`
 - **大型任务先 spec 再闭环**：大任务先出一个 spec（计划/步骤文档），然后逐项执行闭环，防止上下文过长导致信息丢失
 - **接收需求时先分析**：判断是否需要新建 spec、是否需要记录记忆留痕，再动手
