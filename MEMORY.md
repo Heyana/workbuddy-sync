@@ -25,5 +25,6 @@
 | Wind 配置规范 | `topics/wind-config.md` | Flutter + Wind |
 | shadcn-vue 使用规范 | `topics/shadcn-vue.md` | Vue3 前端项目 |
 | 前端项目通用规则 | `topics/frontend-rules.md` | 任意前端项目 |
+| 重构策略（血泪教训） | `topics/frontend-rules.md` | 重构前必读 — 逐模块渐进、禁止全量替换 |
 | 当前项目列表 | `topics/current-projects.md` | 新建/切换项目时 |
 | Flutter 桌面截图 | `topics/flutter-screenshot.md` | Flutter 截图需求 |
