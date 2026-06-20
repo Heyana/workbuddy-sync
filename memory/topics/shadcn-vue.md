@@ -5,6 +5,8 @@
 > 📡 MCP Server 分析见：[shadcn-vue-mcp.md](shadcn-vue-mcp.md) — 源码审查、安全评估、集成方案
 > 
 > 🧩 组件层深度分析见：[shadcn-vue-components.md](shadcn-vue-components.md) — 薄封装策略、组件模式、类型契约
+> 
+> ⚙️ CLI 内部机制见：[shadcn-vue-cli-internals.md](shadcn-vue-cli-internals.md) — init/apply 流程、preset 编解码、事务回滚
 
 ## 核心命令
 
