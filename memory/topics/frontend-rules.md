@@ -42,7 +42,8 @@
 
 ### JSX 在 .ts 文件中
 - 含 JSX 的 API 文件必须 .tsx 后缀
-- 动态组件类型用 `h(Icon, { class: "..." })` 而非 `<Icon />`
+### JSX 在 .ts 文件中
+- 含 JSX 的 API 文件必须 .tsx 后缀
 
 ### 工具模块可能不在组件目录
 - v1 项目的工具模块可能在 `utils/` 下而非 `components/`，需全局搜索
