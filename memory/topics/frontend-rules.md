@@ -29,3 +29,20 @@
 
 - 每迁移一个页面 → `yarn dev` 启动 → 验证该页面 CRUD 和交互 → 截图留底 → 再继续下一个
 - 不要攒多个模块一起测，问题定位成本指数的
+
+## Vue TSX 踩坑
+
+### TSX → .vue SFC 命名 slot 不兼容 ⚠️
+- TSX 中 `{{ name: () => <div/> }}` 语法传给 .vue SFC 的命名 slot，Vue 会渲染为 `[object Object]`
+- **解决**: TSX 调用方直接用 shadcn 原生组件，不经过 .vue 封装层
+- 或用 `slots.default?.()` 通吃，不在 TSX 中向 .vue 传命名 slot
+
+### flex 子元素溢出滚动
+- flex-1 + overflow-y-auto 需要同时加 `min-h-0`，否则默认 min-height:auto 阻止收缩
+
+### JSX 在 .ts 文件中
+- 含 JSX 的 API 文件必须 .tsx 后缀
+- 动态组件类型用 `h(Icon, { class: "..." })` 而非 `<Icon />`
+
+### 工具模块可能不在组件目录
+- v1 项目的工具模块可能在 `utils/` 下而非 `components/`，需全局搜索
