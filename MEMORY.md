@@ -39,4 +39,4 @@
 | 项目 | 路径 | 说明 |
 |------|------|------|
 | vue3_zui (v2 当前) | `D:\hxy\github\vue3_zui` | 干净重建的 ZUI v2，无 v1 legacy |
-| vue3_zui_backup | `D:\hxy\github\vue3_zui_backup` | 2026-06-20 备份，含完整 v1 + v2 代码
+| vue3_zui_backup | `D:\hxy\github\vue3_zui_backup` | 2026-06-21 覆写为 commit 9da1d6a (来自 vue3_zui repo)，保留 project-map.md 和 .workbuddy 记忆
