@@ -60,6 +60,13 @@ npx shadcn-vue@latest add button badge switch checkbox ...  # 批量
 - shadcn CLI `add sonner` 只生成 Sonner.vue 组件 + CSS 变量，**不会自动注入定位 CSS**
 - 需要手动 `import "vue-sonner/style.css"` 获取自带动画
 
+### Select 无动画坑 ⚠️
+- shadcn-vue 的 `SelectContent`（`src/components/ui/select/SelectContent.vue`）在默认 `position="item-aligned"` 时，class 中含 `data-[align-trigger=true]:animate-none`
+- reka-ui 的 SelectContent 在 item-aligned 模式下 `data-align-trigger` 永远为 `true`
+- 结果：`animate-none` → `animation: none` 永远生效，所有 `data-open:animate-in` / `data-closed:animate-out` 动画被完全抑制
+- **修复**：移除 SelectContent class 中的 `data-[align-trigger=true]:animate-none`
+- 仅影响 Select（Popover/Dropdown/Tooltip 不用 item-aligned，不受影响）
+
 ### 正确用法
 ```ts
 // main.ts
