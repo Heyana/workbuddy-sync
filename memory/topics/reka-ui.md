@@ -1,12 +1,147 @@
-# reka-ui 尽职调查 — 核心组件机制与薄封装陷阱
+# reka-ui 尽职调查 — 项目地图与核心机制
 
 > 仓库：`D:\hxy\github\reka-ui` (`unovue/reka-ui`, v2.10.0, MIT)
 > 
 > 分析时间：2026-06-21
 > 
-> 66 个组件，其中 60 个公开导出，6 个内部（Menu/Popper/Collection/FocusGuards/Teleport/ColorPicker）
+> ⚠️ 仓库本身无架构图。项目地图为本次分析产出。
 
 ---
+
+## 0. 项目地图
+
+### 0.1 顶层架构
+
+```
+reka-ui Monorepo (pnpm 10, Vue 3.4+, MIT, v2.10.0)
+│
+├── packages/core/                ← npm: reka-ui
+│   └── src/
+│       ├── 60 public component families (accordion, dialog, select, ...)
+│       │   └── 分组: Menu(5), Overlay(6), Form(16), Data(~12), Color(5),
+│       │             Date(12), Utility(6), Other(~8)
+│       │
+│       ├── shared/ (14 composables)
+│       │   createContext, useForwardProps, useForwardExpose,
+│       │   useBodyScrollLock, useDirection, useStateMachine,
+│       │   useArrowNavigation, useTypeahead...
+│       │
+│       ├── date/ (calendar utilities)
+│       │   DateValue, format helpers
+│       │
+│       └── Internal (6, not exported)
+│           Menu/ (abstract base for all menu types)
+│           Popper/ (floating-ui wrapper)
+│           Collection/ (item management)
+│           FocusGuards/, Teleport/, ColorPicker/ (placeholder)
+│
+├── packages/plugins/             ← build-tool integration
+│   ├── Nuxt module
+│   ├── Auto-import resolver
+│   └── Sub-paths: /nuxt, /resolver, /namespaced, /constant
+│
+├── docs/                         ← VitePress site
+│   ├── 57 component pages
+│   ├── 378 auto-gen API meta files (vue-component-meta)
+│   ├── 11 guides, 16 utilities, 13 examples
+│   └── LLM: llms.txt + vitepress-plugin-llms
+│
+└── Build: vue-tsc → tsdown (esbuild) → npm publish
+    Tests: vitest + jsdom + testing-library/vue + vitest-axe
+    Convention: Conventional Commits (fix(Dialog): ...)
+```
+
+### 0.2 单组件家族内部解剖（以 ContextMenu 为例，17 文件）
+
+```
+ContextMenu/
+├── index.ts                    ← re-exports all
+│
+├── ContextMenuRoot.vue         ← provide ContextMenuRootContext
+│   internal: open=ref(false), wraps MenuRoot→PopperRoot
+│   provides: { open, onOpenChange, triggerElement, modal, dir, pressOpenDelay }
+│
+├── ContextMenuTrigger.vue      ← inject rootContext
+│   @contextmenu → point={x,y}, onOpenChange(true)
+│   renders: MenuAnchor(virtualEl) + Primitive(event handler)
+│
+├── ContextMenuContent.vue      ← inject rootContext + menuContext
+│   teleports via Portal → Presence(:present="open") → MenuContentImpl
+│   MenuContentImpl: FocusScope→DismissableLayer→RovingFocusGroup→PopperContent
+│
+├── ContextMenuItem.vue         ← wraps MenuItem
+├── ContextMenuSub.vue          ← wraps MenuSub, provide new MenuContext
+├── ContextMenuSubTrigger.vue   ← inject MenuContentContext + MenuSubContext
+├── ContextMenuSubContent.vue   ← wraps MenuSubContent
+├── ContextMenuSeparator.vue    ← wraps MenuSeparator
+├── ContextMenuLabel.vue        ← wraps MenuLabel
+├── ContextMenuGroup.vue        ← wraps MenuGroup
+├── ContextMenuCheckboxItem.vue
+├── ContextMenuRadioGroup.vue
+├── ContextMenuRadioItem.vue
+├── ContextMenuPortal.vue
+├── ContextMenuShortcut.vue     ← pure HTML (not reka-ui)
+└── utils.ts
+```
+
+**共享的 internal 层（被 ContextMenu 依赖但用户不可见）**：
+
+```
+Menu/ (abstract base, reused by DropdownMenu/ContextMenu/Menubar)
+├── MenuRoot.vue          → provide MenuContext + MenuRootContext
+├── MenuContent.vue       → Presence + MenuContentImpl
+├── MenuContentImpl.vue   → FocusScope + DismissableLayer + RovingFocus
+├── MenuSub.vue           → provide new MenuContext (submenu)
+├── MenuAnchor.vue        → Popper anchor
+├── MenuItemImpl.vue      → item rendering logic
+├── MenuSubContent.vue    → submenu content
+├── MenuSubTrigger.vue    → submenu trigger with grace area
+└── utils.ts              → FIRST_LAST_KEYS, focusFirst, etc.
+
+Popper/ (positioning engine, based on @floating-ui/vue)
+├── PopperRoot.vue        → provide Popper context
+├── PopperContent.vue     → computed position, data-side/data-align
+└── PopperAnchor.vue      → anchor reference element
+
+Collection/
+└── item collection management (used by Select, Combobox, Listbox)
+```
+
+### 0.3 构建与发布
+
+```
+源码格式: Vue 3 SFC (.vue) + TypeScript
+  类型检查: vue-tsc --noEmit
+    打包: tsdown (基于 esbuild, tsup 替代)
+      产物: dist/index.js (ESM) + dist/index.cjs (CJS)
+        发布: npm publish --access public
+          子路径: 8 exports (./internal, ./date, ./nuxt, ...)
+```
+
+### 0.4 依赖链
+
+```
+reka-ui (v2.10.0)
+├── @floating-ui/vue          ← Popper 定位
+├── @vueuse/core              ← useVModel
+├── vue (peer: >= 3.4.0)
+│
+文档站点:
+├── vitepress ^1.6.3
+├── motion-v                  ← 动画
+├── vue-component-meta        ← API 文档自动生成
+├── vitepress-plugin-llms     ← llms.txt 输出
+│
+测试:
+├── vitest + jsdom
+├── @testing-library/vue
+├── vitest-axe                ← a11y 检查
+│
+构建:
+├── tsdown                    ← ts 打包 (esbuild)
+├── vue-tsc                   ← 类型检查
+└── eslint                    ← lint
+```
 
 ## 1. ContextMenu 完整工作流
 
