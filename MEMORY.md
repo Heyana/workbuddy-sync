@@ -29,6 +29,7 @@
 | shadcn-vue CLI 内部机制 | `topics/shadcn-vue-cli-internals.md` | init/apply 行为理解 |
 | reka-ui 核心机制 | `topics/reka-ui.md` | 底层组件机制、薄封装陷阱排查 |
 | Impeccable 设计工具集 | `topics/impeccable.md` | 前端 UI 设计时 |
+| Skills 清单 | `topics/skills.md` | 新机器/拉取后按表安装 |
 | 前端项目通用规则 | `topics/frontend-rules.md` | 任意前端项目 |
 | 重构策略（血泪教训） | `topics/frontend-rules.md` | 重构前必读 — 逐模块渐进、禁止全量替换 |
 | 当前项目列表 | `topics/current-projects.md` | 新建/切换项目时 |

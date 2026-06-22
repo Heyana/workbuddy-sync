@@ -35,8 +35,17 @@
 }
 ```
 
-### playwright（如有）
-通过 WorkBuddy UI 安装的 MCP 连接器，路径由 WorkBuddy 自动管理，无需手动配置。
+### playwright（前端截图/调试）
+```json
+{
+  "playwright": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"]
+  }
+}
+```
+> 首次使用会自动下载浏览器。支持 `--headless`、`--browser=chrome/firefox/webkit/msedge` 等参数。
+> 截图功能详见下方「截屏工作流」。
 
 ## 使用规则
 - RedNote-MCP 搜索必须逐个进行，间隔 2-3 秒
