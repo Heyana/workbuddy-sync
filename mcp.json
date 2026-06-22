@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "RedNote-MCP": {
-      "command": "C:\\Users\\hzy\\.workbuddy\\binaries\\node\\versions\\22.22.2\\npx.cmd",
+      "command": "C:\\Users\\hy\\.workbuddy\\binaries\\node\\versions\\22.22.2\\npx.cmd",
       "args": [
         "rednote-mcp",
         "--stdio"
@@ -9,10 +9,10 @@
       "disabled": false
     },
     "ctrip": {
-      "command": "C:\\Users\\hzy\\.ctrip-mcp\\.venv\\Scripts\\ctrip-mcp.exe",
+      "command": "C:\\Users\\hy\\.ctrip-mcp\\.venv\\Scripts\\ctrip-mcp.exe",
       "env": {
-        "CTRIP_DATA_DIR": "C:\\Users\\hzy\\ctrip-data",
-        "CTRIP_CHROMIUM": "C:\\Users\\hzy\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe"
+        "CTRIP_DATA_DIR": "C:\\Users\\hy\\ctrip-data",
+        "CTRIP_CHROMIUM": "C:\\Users\\hy\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe"
       },
       "disabled": false
     }
