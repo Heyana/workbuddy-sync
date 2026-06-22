@@ -1,0 +1,36 @@
+# User Memory Profile
+> Last updated: 2026-06-17T23:36:14+08:00
+> Version: 39
+
+## Memory Block
+
+**工作背景**
+用户是全栈开发者，兼具游戏UI设计背景，桌面存有FPS游戏UI分析PPT及国风射击游戏UI设计文档。技术栈涵盖 Electron + Go + SQLite 架构及 Flutter 开发。核心项目包括：Flutter 资产管理 App（WorkBuddy-Space/asset_manager），具备多账号 WebDAV 文件级增量同步；Electron 媒体管理器（electron-media-manager），采用 Go 后端（HTTP 端口 23347）与内置 SQLite，已从 Prisma 迁移；osvtoolbox 项目，涉及基于 RTX 4070 GPU 的 ffmpeg 视频编码逻辑优化。同时，用户正在开发名为 'dots' 的 Flutter 个人生活追踪 App，使用 shadcn_flutter + Wind + LucideIcons 技术栈，当前还在排查修复z_vue3组件库的dist构建相关问题。用户擅长识别架构缺陷，追求清洁、最优的解决方案，并习惯在请求架构审查时提供项目路径及 tree.txt 文件。环境与工具方面，用户使用 WorkBuddy（腾讯产品），桌面也有飞书、钉钉等办公软件，并与韩语环境相关（桌面有韩文办公套件文件，涉及헤즈이/Hezii）。
+
+**个人背景**
+用户风格直接、务实，偏好在提供项目背景后获取简洁的反馈与编译结果。遵循“代码审查 → 性能分析 → 架构文档”的工作流，要求 AI 阅读源代码文件、审查 git diff 以诊断问题，并基于原始日志提供根因分析与具体修复方案的结构化输出（含表格、代码块）。UI 设计偏好 Naive UI 组件库与简洁商务风格，在 Flutter 项目中则严格使用 shadcn_flutter 并避免 material/forui 组件；迭代时习惯通过截图和浏览器 DevTools CSS 片段指出细节问题，且偏好内联 SVG 图标而非 Emoji。在 Flutter 开发中 enforce 严格规则：禁用 forui/material，使用 shadcn toast，优先使用 div/wdiv 而非 Expanded/Column，且查询必须使用 proper where 子句而非 '1=1' 原始 SQL。用户期望代码变更完成后执行 commit 并 push，同时要求每次代码修改完成后需自动更新记忆、spec等文档完成留痕。
+
+**当前关注**
+正聚焦 Flutter 资产记账 App 的数据库可靠性与同步架构升级，此前在目录迁移中遭遇数据丢失，计划新增数据库路径显示功能以提供视觉确认。同步方案已转向多账号 WebDAV 文件级增量同步。同时，正在排查 Electron 媒体管理器中 GORM + SQLite 的慢 SQL 写入问题（>200ms），并致力于 osvtoolbox 项目的 ffmpeg 编码性能优化，充分利用 RTX 4070 硬件能力。此外，正按计划推进 Flutter 习惯/事件追踪 App 'dots' 的开发，已明确 Timeline→Stats→Settings→Category CRUD→Daily Goals→Dark Mode→Export→Reminders 的功能路线图，目前特别关注 Flutter 时间线（Timeline）功能的滚动加载实现，正在解决开发过程中遇到的 'Incorrect use of ParentDataWidget' 错误，同时还在排查修复z_vue3组件库的dist构建相关问题。
+
+**近期动态**
+- 完成 Flutter 项目架构调整：移除 OneDrive 支持，新增多账号 WebDAV 同步，采用文件级增量同步替代 ZIP 全包同步。
+- 排查并修复 Flutter App 数据库迁移后的数据丢失问题，计划增加数据库路径可视化显示以增强系统状态确认。
+- 推进 Electron 媒体管理器后端性能优化，重点解决 GORM + SQLite 写入延迟超过 200ms 的瓶颈。
+- 启动 osvtoolbox 项目开发，正针对 RTX 4070 GPU 优化 ffmpeg 视频编码逻辑（osvtoolbox.cpp）。
+- 明确 Flutter 习惯/事件追踪 App 'dots' 的技术栈与开发规范，开始按路线图推进功能开发，并 enforce 严格的组件与布局使用规则。
+- 正在进行 Flutter 'dots' 项目的 Timeline 功能开发，重点实现滚动加载并解决 ParentDataWidget 相关的布局报错。
+- 持续通过截图与 CSS 片段迭代各 App UI，偏好使用 Naive UI 及 shadcn_flutter 组件库。
+- 启动z_vue3组件库dist构建问题的排查与修复工作。
+- 明确要求每次代码修改完成后需自动更新记忆、spec等文档完成开发留痕。
+
+---
+
+<!-- RAW_JSON_START
+{
+  "uid": "2d589503-5cb1-487b-a974-1a2d2d005497",
+  "memoryBlock": "**工作背景**\n用户是全栈开发者，兼具游戏UI设计背景，桌面存有FPS游戏UI分析PPT及国风射击游戏UI设计文档。技术栈涵盖 Electron + Go + SQLite 架构及 Flutter 开发。核心项目包括：Flutter 资产管理 App（WorkBuddy-Space/asset_manager），具备多账号 WebDAV 文件级增量同步；Electron 媒体管理器（electron-media-manager），采用 Go 后端（HTTP 端口 23347）与内置 SQLite，已从 Prisma 迁移；osvtoolbox 项目，涉及基于 RTX 4070 GPU 的 ffmpeg 视频编码逻辑优化。同时，用户正在开发名为 'dots' 的 Flutter 个人生活追踪 App，使用 shadcn_flutter + Wind + LucideIcons 技术栈，当前还在排查修复z_vue3组件库的dist构建相关问题。用户擅长识别架构缺陷，追求清洁、最优的解决方案，并习惯在请求架构审查时提供项目路径及 tree.txt 文件。环境与工具方面，用户使用 WorkBuddy（腾讯产品），桌面也有飞书、钉钉等办公软件，并与韩语环境相关（桌面有韩文办公套件文件，涉及헤즈이/Hezii）。\n\n**个人背景**\n用户风格直接、务实，偏好在提供项目背景后获取简洁的反馈与编译结果。遵循“代码审查 → 性能分析 → 架构文档”的工作流，要求 AI 阅读源代码文件、审查 git diff 以诊断问题，并基于原始日志提供根因分析与具体修复方案的结构化输出（含表格、代码块）。UI 设计偏好 Naive UI 组件库与简洁商务风格，在 Flutter 项目中则严格使用 shadcn_flutter 并避免 material/forui 组件；迭代时习惯通过截图和浏览器 DevTools CSS 片段指出细节问题，且偏好内联 SVG 图标而非 Emoji。在 Flutter 开发中 enforce 严格规则：禁用 forui/material，使用 shadcn toast，优先使用 div/wdiv 而非 Expanded/Column，且查询必须使用 proper where 子句而非 '1=1' 原始 SQL。用户期望代码变更完成后执行 commit 并 push，同时要求每次代码修改完成后需自动更新记忆、spec等文档完成留痕。\n\n**当前关注**\n正聚焦 Flutter 资产记账 App 的数据库可靠性与同步架构升级，此前在目录迁移中遭遇数据丢失，计划新增数据库路径显示功能以提供视觉确认。同步方案已转向多账号 WebDAV 文件级增量同步。同时，正在排查 Electron 媒体管理器中 GORM + SQLite 的慢 SQL 写入问题（>200ms），并致力于 osvtoolbox 项目的 ffmpeg 编码性能优化，充分利用 RTX 4070 硬件能力。此外，正按计划推进 Flutter 习惯/事件追踪 App 'dots' 的开发，已明确 Timeline→Stats→Settings→Category CRUD→Daily Goals→Dark Mode→Export→Reminders 的功能路线图，目前特别关注 Flutter 时间线（Timeline）功能的滚动加载实现，正在解决开发过程中遇到的 'Incorrect use of ParentDataWidget' 错误，同时还在排查修复z_vue3组件库的dist构建相关问题。\n\n**近期动态**\n- 完成 Flutter 项目架构调整：移除 OneDrive 支持，新增多账号 WebDAV 同步，采用文件级增量同步替代 ZIP 全包同步。\n- 排查并修复 Flutter App 数据库迁移后的数据丢失问题，计划增加数据库路径可视化显示以增强系统状态确认。\n- 推进 Electron 媒体管理器后端性能优化，重点解决 GORM + SQLite 写入延迟超过 200ms 的瓶颈。\n- 启动 osvtoolbox 项目开发，正针对 RTX 4070 GPU 优化 ffmpeg 视频编码逻辑（osvtoolbox.cpp）。\n- 明确 Flutter 习惯/事件追踪 App 'dots' 的技术栈与开发规范，开始按路线图推进功能开发，并 enforce 严格的组件与布局使用规则。\n- 正在进行 Flutter 'dots' 项目的 Timeline 功能开发，重点实现滚动加载并解决 ParentDataWidget 相关的布局报错。\n- 持续通过截图与 CSS 片段迭代各 App UI，偏好使用 Naive UI 及 shadcn_flutter 组件库。\n- 启动z_vue3组件库dist构建问题的排查与修复工作。\n- 明确要求每次代码修改完成后需自动更新记忆、spec等文档完成开发留痕。",
+  "version": 39,
+  "updatedAt": "2026-06-17T23:36:14+08:00"
+}
+RAW_JSON_END -->
