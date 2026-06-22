@@ -6,8 +6,8 @@
 
 ## 拉取后
 1. `git pull --rebase`
-2. 检查 `topics/skills.md`，对缺失的 skill 通过 marketplace 安装
-3. 检查 `topics/mcp-rules.md` 配置模板，更新本地 `mcp.json`
+2. 检查 `topics/frontend/skills.md`，对缺失的 skill 通过 marketplace 安装
+3. 检查 `topics/mcp/rules.md` 配置模板，更新本地 `mcp.json`
 
 ## 机器相关
 - 各机器本地维护 `project-map.md`（项目名→路径映射表），该文件不入 git
