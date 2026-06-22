@@ -5,6 +5,39 @@
 - **RedNote-MCP** — 小红书笔记搜索/内容获取
 - **ctrip** — 携程数据抓取
 
+## 配置模板（mcp.json）
+
+以下为各服务器完整配置。`{HOME}` 替换为本机用户目录（如 `C:\Users\hy`）。
+各机照此写入本地 `~/.workbuddy/mcp.json`（不入 git）。
+
+### RedNote-MCP
+```json
+{
+  "RedNote-MCP": {
+    "command": "{HOME}\\.workbuddy\\binaries\\node\\versions\\22.22.2\\npx.cmd",
+    "args": ["rednote-mcp", "--stdio"],
+    "disabled": false
+  }
+}
+```
+
+### ctrip
+```json
+{
+  "ctrip": {
+    "command": "{HOME}\\.ctrip-mcp\\.venv\\Scripts\\ctrip-mcp.exe",
+    "env": {
+      "CTRIP_DATA_DIR": "{HOME}\\ctrip-data",
+      "CTRIP_CHROMIUM": "{HOME}\\AppData\\Local\\ms-playwright\\chromium-1223\\chrome-win64\\chrome.exe"
+    },
+    "disabled": false
+  }
+}
+```
+
+### playwright（如有）
+通过 WorkBuddy UI 安装的 MCP 连接器，路径由 WorkBuddy 自动管理，无需手动配置。
+
 ## 使用规则
 - RedNote-MCP 搜索必须逐个进行，间隔 2-3 秒
 - 并行搜索易触发风控
