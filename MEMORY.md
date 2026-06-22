@@ -6,7 +6,7 @@
 > 
 > **记忆管理**：无论用户级还是工作区级记忆，过大时拆分为独立小文件，不删除。
 
-> ⚠️ **同步规则**：修改 `memory/topics/` 下任意文件后，必须同步到 `D:\hxy\github\workbuddy-sync/`，并 commit + push。
+> ⚠️ **同步规则**：修改 `memory/topics/` 下文件后 commit + push。本地备份克隆路径见 `project-map.md` → `workbuddy-sync`。各机器项目路径见各自的 `project-map.md`。
 
 ## 🔴 通用（每次必读）
 
@@ -38,5 +38,5 @@
 
 | 项目 | 路径 | 说明 |
 |------|------|------|
-| vue3_zui (v2 当前) | `D:\hxy\github\vue3_zui` | 干净重建的 ZUI v2，无 v1 legacy |
-| vue3_zui_backup | `D:\hxy\github\vue3_zui_backup` | 2026-06-21 覆写为 commit 9da1d6a (来自 vue3_zui repo)，保留 project-map.md 和 .workbuddy 记忆
+| vue3_zui (v2 当前) | 见 project-map.md → `vue3_zui` | 干净重建的 ZUI v2，无 v1 legacy |
+| vue3_zui_backup | 见 project-map.md → `vue3_zui_backup` | 2026-06-21 覆写为 commit 9da1d6a (来自 vue3_zui repo)，保留 project-map.md 和 .workbuddy 记忆

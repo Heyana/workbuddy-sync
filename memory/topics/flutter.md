@@ -15,3 +15,6 @@
 - WText 动态颜色用 foregroundColor:，非 style:
 - Wind bg-[#...] 只支持 6 位 hex
 - 查询必须用 proper where 子句，禁止 '1=1' 原始 SQL
+- StatelessWidget 子类构造函数加 `const`
+- 字符串插值单变量不加花括号：`$index` 而非 `${index}`
+- `material.dart` 只在 main.dart 允许（MaterialApp.router 需要），其他文件禁止 import

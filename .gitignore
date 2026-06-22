@@ -1,15 +1,11 @@
 # Ignore everything by default
 *
 
-# === Config files ===
+# === Shared config files ===
 !MEMORY.md
 !SOUL.md
 !IDENTITY.md
 !USER.md
-!mcp.json
-!mcp-approvals.json
-!settings.json
-!models.json
 !.gitignore
 !README.md
 
@@ -21,7 +17,6 @@
 !skills/
 !skills/**
 
-# === Connector defaults (MCP configs, no auth tokens) ===
-!connectors/
-!connectors/default/
-!connectors/default/mcp.json
+# Machine-specific files — each machine has its own:
+# mcp.json (paths differ), mcp-approvals.json (auto), settings.json (auto),
+# models.json (auto), project-map.md (per-machine paths), connectors/
