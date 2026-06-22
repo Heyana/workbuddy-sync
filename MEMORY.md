@@ -28,6 +28,7 @@ topics/
 | 编码风格 | `topics/core/coding-style.md` |
 | 工作习惯 | `topics/core/work-habits.md` |
 | 项目结构规范 | `topics/core/project-structure.md` |
+| 个人背景 | `topics/core/personal-context.md` |
 
 ## 🟢 按领域按需
 
