@@ -1,6 +1,7 @@
 # Impeccable — 前端设计工具集
 
-已安装 skill：`impeccable` v2.0.0（`~/.workbuddy/skills/skill_2053082862415904768/`）
+> marketplace skillId: `skill_2053082862415904768`
+> 新电脑安装：在 WorkBuddy 中说「安装 impeccable skill」或通过 marketplace 搜索安装
 
 ## 用途
 
