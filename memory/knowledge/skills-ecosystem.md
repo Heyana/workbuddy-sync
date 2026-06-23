@@ -1,6 +1,6 @@
 # Skills 生态 & 市场
 
-> 2026-06-24 调研 [skillstore.io](https://skillstore.io/zh-hans) 和 [skills.sh](https://www.skills.sh/)
+> 2026-06-24 调研 [skillstore.io](https://skillstore.io/zh-hans)、[skills.sh](https://www.skills.sh/)、[skillsmp.com](https://skillsmp.com/)
 
 ## 当前已安装 Skills
 
@@ -32,6 +32,13 @@
 - 偏 AI 内容生成（slides、banner、图标等）
 - 有一个 `domain-modeling` 概念不错但太重
 - 整体与我们的开发场景匹配度低
+
+### skillsmp.com
+- 最大 Skills 搜索引擎，收录 180 万+ SKILL.md 文件
+- 按职业分类（23 大类 867 个 SOC 岗位）、按创建者、按类别过滤
+- 适合按领域搜索：knowledge/wiki/memory 等垂直方向
+- 支持 API 接入，GitHub 源可追溯
+- 发现 archive 等小众 skill 的主要渠道
 
 ## 手动安装 Skill 模板
 
