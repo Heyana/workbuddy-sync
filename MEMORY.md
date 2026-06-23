@@ -20,12 +20,7 @@ topics/              → 规则与偏好（how/what）
 ├── projects/          当前项目列表
 └── meta/              记忆系统自身
 
-knowledge/           → 技术深度知识（why/how-to）
-├── go-sqlite.md       Go + SQLite 踩坑与最佳实践
-├── flutter-layout.md  Flutter Wind 布局排坑
-├── vue-tsx.md         Vue 3 TSX 组件编写
-├── ffmpeg.md          ffmpeg/NVENC 编码优化
-└── webdav-sync.md     WebDAV 文件级增量同步
+knowledge/           → 技术深度知识（why/how-to），详见下方 📚 技术知识库
 ```
 
 ## 🔴 通用（每次必读）
@@ -79,6 +74,8 @@ knowledge/           → 技术深度知识（why/how-to）
 
 ## 📚 技术知识库
 
+> 本地索引：`knowledge/_index.md`（与下表同步维护）。
+>
 > **与 topics 的区别**：topics 记"规则/偏好/约定"（怎么干），knowledge 记"技术深度知识/排坑记录"（为什么这么干、怎么干对）。
 > **读完即更新**：AI 在工作过程中发现新知识、踩坑、学到模式 → 立刻更新对应 knowledge 文件。不要等用户提醒。
 > **读时顺手维护**：读到过时或错误的内容，直接修正。
@@ -97,7 +94,7 @@ knowledge/           → 技术深度知识（why/how-to）
 2. **不要重复 topics**：topics 已有规则（如"Flutter 禁止 material"）不再往 knowledge 写，knowledge 只记"为什么"和"具体怎么做"。
 3. **保持精炼**：只记结论、约束、关键参数、代码模板。不记推导过程。
 4. **TODO 是债务**：标注了 `（TODO：...）` 的部分是已知空白，遇到相关知识立刻填入并移除 TODO。
-5. **新增领域**：出现高频新领域时，在 knowledge/ 下新建文件，并更新此索引。
+5. **新增领域**：出现高频新领域时，在 knowledge/ 下新建文件，并更新 `knowledge/_index.md` 和此索引。
 
 ## 🔧 工具/技术笔记
 
