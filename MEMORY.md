@@ -11,7 +11,7 @@
 ## 目录结构
 
 ```
-topics/
+topics/              → 规则与偏好（how/what）
 ├── core/              🔴 通用，每次必读
 ├── frontend/          前端通用规则
 ├── vue/               Vue + shadcn-vue 生态
@@ -19,6 +19,13 @@ topics/
 ├── mcp/               MCP 工具配置
 ├── projects/          当前项目列表
 └── meta/              记忆系统自身
+
+knowledge/           → 技术深度知识（why/how-to）
+├── go-sqlite.md       Go + SQLite 踩坑与最佳实践
+├── flutter-layout.md  Flutter Wind 布局排坑
+├── vue-tsx.md         Vue 3 TSX 组件编写
+├── ffmpeg.md          ffmpeg/NVENC 编码优化
+└── webdav-sync.md     WebDAV 文件级增量同步
 ```
 
 ## 🔴 通用（每次必读）
@@ -69,6 +76,28 @@ topics/
 | 主题 | 文件 |
 |------|------|
 | 同步规则 | `topics/meta/sync.md` |
+
+## 📚 技术知识库
+
+> **与 topics 的区别**：topics 记"规则/偏好/约定"（怎么干），knowledge 记"技术深度知识/排坑记录"（为什么这么干、怎么干对）。
+> **读完即更新**：AI 在工作过程中发现新知识、踩坑、学到模式 → 立刻更新对应 knowledge 文件。不要等用户提醒。
+> **读时顺手维护**：读到过时或错误的内容，直接修正。
+
+| 领域 | 文件 | 覆盖内容 |
+|------|------|----------|
+| Go + SQLite | `knowledge/go-sqlite.md` | GORM 性能、并发写入、连接池、查询规范、迁移 |
+| Flutter 布局 | `knowledge/flutter-layout.md` | Wind WDiv、Stack/Positioned、flex-1 嵌套、ParentDataWidget 排坑 |
+| Vue TSX | `knowledge/vue-tsx.md` | TSX 优先策略、createApp 函数式组件、h() 禁令、reka-ui 整合 |
+| ffmpeg | `knowledge/ffmpeg.md` | NVENC (RTX 4070) 参数、GPU 管线、C++ 集成 (osvtoolbox) |
+| WebDAV 同步 | `knowledge/webdav-sync.md` | 文件级增量同步、多账号、manifest 设计、冲突处理 |
+
+### ⚠️ AI 维护规则（必读）
+
+1. **勤更新**：每次踩坑、解决疑难问题、发现模式 → 立刻追加到对应 knowledge 文件。不要攒着，不要等。
+2. **不要重复 topics**：topics 已有规则（如"Flutter 禁止 material"）不再往 knowledge 写，knowledge 只记"为什么"和"具体怎么做"。
+3. **保持精炼**：只记结论、约束、关键参数、代码模板。不记推导过程。
+4. **TODO 是债务**：标注了 `（TODO：...）` 的部分是已知空白，遇到相关知识立刻填入并移除 TODO。
+5. **新增领域**：出现高频新领域时，在 knowledge/ 下新建文件，并更新此索引。
 
 ## 🔧 工具/技术笔记
 
