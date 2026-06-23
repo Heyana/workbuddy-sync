@@ -8,7 +8,19 @@
 
 > ⚠️ **同步规则**：修改 `~/.workbuddy/` 下文件后 commit + push。本地备份克隆路径见 `project-map.md` → `workbuddy-sync`。各机器项目路径见各自的 `project-map.md`。
 
-> 🤖 **Skills 自动调用**：AI 必须根据上下文自动判断触发 skill，不需要用户手动指定 `/skill-name`。触发场景表见 `knowledge/skills-ecosystem.md`。使用新工具/网站/渠道 → 立刻记入对应 knowledge 文件，不等提醒（URL 必须可点击）。
+> 🤖 **Skills 自动调用**：AI 必须根据上下文自动判断触发 skill，不需要用户手动指定 `/skill-name`。
+>
+> | 场景 | 自动触发 Skill |
+> |------|---------------|
+> | 做架构决策前 | grill-me |
+> | 审查/优化代码架构 | improve-codebase-architecture |
+> | 新建/重设计 UI 页面 | frontend-design |
+> | 生成好看的 UI 组件 | impeccable |
+> | AI 图片生成/编辑 | nano-banana-pro |
+> | 整理/构建个人知识库 | llm-wiki |
+> | 记录偏好/项目上下文/任务前后 | archive |
+>
+> 使用新工具/网站/渠道 → 立刻记入对应 knowledge 文件，不等提醒（URL 必须可点击）。
 
 ## 🚀 会话启动协议（每个新会话必须执行）
 
