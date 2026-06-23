@@ -1,6 +1,6 @@
 # Skills 生态 & 市场
 
-> 2026-06-24 调研 skillstore.io 和 skills.sh
+> 2026-06-24 调研 [skillstore.io](https://skillstore.io/zh-hans) 和 [skills.sh](https://www.skills.sh/)
 
 ## 当前已安装 Skills
 
