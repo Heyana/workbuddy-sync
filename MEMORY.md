@@ -8,6 +8,8 @@
 
 > ⚠️ **同步规则**：修改 `~/.workbuddy/` 下文件后 commit + push。本地备份克隆路径见 `project-map.md` → `workbuddy-sync`。各机器项目路径见各自的 `project-map.md`。
 
+> 🤖 **Skills 自动调用**：AI 必须根据上下文自动判断触发 skill，不需要用户手动指定 `/skill-name`。触发场景表见 `knowledge/skills-ecosystem.md`。使用新工具/网站/渠道 → 立刻记入对应 knowledge 文件，不等提醒（URL 必须可点击）。
+
 ## 目录结构
 
 ```
@@ -87,6 +89,7 @@ knowledge/           → 技术深度知识（why/how-to），详见下方 📚 
 | Vue TSX | `knowledge/vue-tsx.md` | TSX 优先策略、createApp 函数式组件、h() 禁令、reka-ui 整合 |
 | ffmpeg | `knowledge/ffmpeg.md` | NVENC (RTX 4070) 参数、GPU 管线、C++ 集成 (osvtoolbox) |
 | WebDAV 同步 | `knowledge/webdav-sync.md` | 文件级增量同步、多账号、manifest 设计、冲突处理 |
+| Skills 生态 | `knowledge/skills-ecosystem.md` | skills 市场调研、已安装列表、依赖关系、触发场景表 |
 
 ### ⚠️ AI 维护规则（必读）
 
@@ -103,6 +106,21 @@ knowledge/           → 技术深度知识（why/how-to），详见下方 📚 
 | 工具 | 说明 |
 |------|------|
 | PixelRAG | Berkeley 开源，用页面截图替代 HTML 解析做视觉 RAG。文档→截图→Qwen3-VL-Embedding→FAISS 检索。预构建 828 万 Wikipedia 索引。不适合调试/开发工具场景。 |
+
+### 个人知识库 Vault
+
+| Vault | 位置 | 用途 |
+|-------|------|------|
+| llm-wiki | `~/.workbuddy/wiki-knowledge/` | 纯 wiki 知识积累（ingest/query/lint），Karpathy 模式 |
+| archive | `~/.workbuddy/archive-vault/` | 偏好/项目/领域上下文（CONSULT/SAVE），自动触发 |
+
+### Skills 市场
+
+| 市场 | URL |
+|------|-----|
+| skills.sh | https://www.skills.sh/ |
+| skillstore.io | https://skillstore.io/zh-hans |
+| skillsmp.com | https://skillsmp.com/ |
 
 ## 📍 项目备份位置
 
