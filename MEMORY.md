@@ -70,6 +70,14 @@ topics/
 |------|------|
 | 同步规则 | `topics/meta/sync.md` |
 
+## 🔧 工具/技术笔记
+
+### 知识库 & 检索
+
+| 工具 | 说明 |
+|------|------|
+| PixelRAG | Berkeley 开源，用页面截图替代 HTML 解析做视觉 RAG。文档→截图→Qwen3-VL-Embedding→FAISS 检索。预构建 828 万 Wikipedia 索引。不适合调试/开发工具场景。 |
+
 ## 📍 项目备份位置
 
 | 项目 | 路径 | 说明 |
