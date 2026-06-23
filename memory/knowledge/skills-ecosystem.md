@@ -11,6 +11,7 @@
 | grill-me | 内置市场 | skill_2057443369928683520 | 方案压力测试/追问 |
 | frontend-design | 手动安装 | frontend-design/ | 前端设计系统与规范（Anthropic 官方） |
 | improve-codebase-architecture | 手动安装 | improve-codebase-architecture/ | 代码架构评估与重构建议（Matt Pocock） |
+| llm-wiki | 内置市场 | skill_2053082332061896704 | 个人知识库构建（Karpathy Wiki 模式：ingest/query/lint） |
 | github | connector | connector-github | GitHub API 操作 |
 
 ## 安装渠道
@@ -65,3 +66,13 @@ grill-me（独立，不依赖 setup）
 | 新建/重设计 UI 页面 | frontend-design |
 | 生成好看的 UI 组件 | impeccable |
 | AI 图片生成 | nano-banana-pro |
+| 整理/构建个人知识库 | llm-wiki |
+| 摄入新资料到知识库 | llm-wiki |
+| 查询/检索已积累知识 | llm-wiki |
+
+## llm-wiki 知识库
+
+- 位置：`~/.workbuddy/wiki-knowledge/`
+- 三层：raw（原始资料，只读）→ wiki（LLM 维护的 md）→ WIKI-SCHEMA（约定）
+- 操作：ingest（摄入）→ query（查询+归档）→ lint（健康检查）
+- 与现有 memory/knowledge/ 互补：memory 记规则，wiki 记深层知识
