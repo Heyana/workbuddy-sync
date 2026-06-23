@@ -5,9 +5,16 @@
 
 ## 已安装 Skills
 
-| 名称 | ID | 版本 | 用途 |
-|------|-----|------|------|
-| **impeccable** | `skill_2053082862415904768` | 2.0.0 | 前端 UI 设计工具集，生成高品质界面，避免 AI Slop |
+| 名称 | 来源 | 目录 | 用途 |
+|------|------|------|------|
+| impeccable | 内置市场 | skill_2053082862415904768 | 前端 UI 生成（高品质界面） |
+| nano-banana-pro | 内置市场 | skill_2053082421296758784 | AI 图片生成/编辑 |
+| grill-me | 内置市场 | skill_2057443369928683520 | 方案压力测试/追问 |
+| frontend-design | 手动安装 | frontend-design/ | 前端设计系统与规范（Anthropic 官方） |
+| improve-codebase-architecture | 手动安装 | improve-codebase-architecture/ | 代码架构评估与重构（Matt Pocock） |
+| llm-wiki | 内置市场 | skill_2053082332061896704 | 个人知识库构建（Karpathy Wiki 模式） |
+| archive | 手动安装 | archive/ | 持久化记忆+偏好+项目上下文 |
+| github | connector | connector-github | GitHub API 操作 |
 
 ## 新机器安装流程
 

@@ -10,6 +10,36 @@
 
 > 🤖 **Skills 自动调用**：AI 必须根据上下文自动判断触发 skill，不需要用户手动指定 `/skill-name`。触发场景表见 `knowledge/skills-ecosystem.md`。使用新工具/网站/渠道 → 立刻记入对应 knowledge 文件，不等提醒（URL 必须可点击）。
 
+## 🚀 会话启动协议（每个新会话必须执行）
+
+> ⚠️ **以下不是建议，是指令。新会话开始时，你必须用 Read 工具实际打开以下文件，不能只看本索引表。**
+
+### 第一层：始终读取（每条会话都读）
+
+| 文件 | 原因 |
+|------|------|
+| `topics/core/coding-style.md` | 编码风格 |
+| `topics/core/work-habits.md` | 工作习惯 |
+| `topics/core/project-structure.md` | 项目结构规范 |
+| `topics/core/personal-context.md` | 个人背景 |
+| `knowledge/skills-ecosystem.md` | Skills 自动触发场景表、已安装列表 |
+| `topics/projects/current.md` | 活跃项目列表 |
+
+### 第二层：按任务领域读取
+
+> 根据用户第一条消息涉及的技术栈，读取对应文件：
+
+| 用户提到 | 必须读取 |
+|----------|----------|
+| Vue / shadcn / reka / TSX | `topics/vue/*` + `knowledge/vue-tsx.md` |
+| Flutter / Dart / Wind | `topics/flutter/*` + `knowledge/flutter-layout.md` |
+| 前端 / UI / 页面 / 组件 | `topics/frontend/*` |
+| Go / SQLite / GORM / 后端 | `knowledge/go-sqlite.md` |
+| ffmpeg / 编码 / GPU | `knowledge/ffmpeg.md` |
+| WebDAV / 同步 | `knowledge/webdav-sync.md` |
+| MCP / connector | `topics/mcp/*` |
+| 记忆 / skill / 知识库 | `topics/meta/*` |
+
 ## 目录结构
 
 ```
