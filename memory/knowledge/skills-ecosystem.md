@@ -12,6 +12,7 @@
 | frontend-design | 手动安装 | frontend-design/ | 前端设计系统与规范（Anthropic 官方） |
 | improve-codebase-architecture | 手动安装 | improve-codebase-architecture/ | 代码架构评估与重构建议（Matt Pocock） |
 | llm-wiki | 内置市场 | skill_2053082332061896704 | 个人知识库构建（Karpathy Wiki 模式：ingest/query/lint） |
+| archive | 手动安装 | archive/ | 持久化记忆+偏好+项目上下文（CONSULT/SAVE/INGEST/QUERY/LINT） |
 | github | connector | connector-github | GitHub API 操作 |
 
 ## 安装渠道
@@ -69,6 +70,9 @@ grill-me（独立，不依赖 setup）
 | 整理/构建个人知识库 | llm-wiki |
 | 摄入新资料到知识库 | llm-wiki |
 | 查询/检索已积累知识 | llm-wiki |
+| 记录偏好/项目上下文 | archive |
+| 任务开始时查记忆 | archive |
+| 任务结束时存新知 | archive |
 
 ## llm-wiki 知识库
 
@@ -76,3 +80,11 @@ grill-me（独立，不依赖 setup）
 - 三层：raw（原始资料，只读）→ wiki（LLM 维护的 md）→ WIKI-SCHEMA（约定）
 - 操作：ingest（摄入）→ query（查询+归档）→ lint（健康检查）
 - 与现有 memory/knowledge/ 互补：memory 记规则，wiki 记深层知识
+
+## archive 记忆仓库
+
+- 位置：`~/.workbuddy/archive-vault/`
+- 六层：sources/ → wiki/（entities/concepts/topics）→ preferences/ → projects/ → domains/
+- 操作：CONSULT（任务前自动查）→ SAVE（任务后自动存）→ INGEST → QUERY → LINT
+- 与 llm-wiki 互补：llm-wiki 管 wiki 知识，archive 管偏好/项目/领域上下文
+- 自动触发：任务 >2 步、涉及 auth/config、用户说"和上次一样"时自动 CONSULT
