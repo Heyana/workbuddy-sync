@@ -10,6 +10,7 @@
 | Vue TSX | [vue-tsx.md](vue-tsx.md) | TSX 优先策略、createApp 函数式组件、h() 禁令、reka-ui 整合 |
 | ffmpeg | [ffmpeg.md](ffmpeg.md) | NVENC (RTX 4070) 参数、GPU 管线、C++ 集成 (osvtoolbox) |
 | WebDAV 同步 | [webdav-sync.md](webdav-sync.md) | 文件级增量同步、多账号、manifest 设计、冲突处理 |
+| Skills 生态 | [skills-ecosystem.md](skills-ecosystem.md) | skills.sh/skillstore.io 调研、已安装列表、安装渠道、Matt Pocock 生态依赖 |
 
 ## 维护规则
 
