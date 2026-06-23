@@ -13,10 +13,12 @@
 ## 🚀 会话启动协议（每个新会话必须执行）
 
 > ⚠️ **以下不是建议，是指令。新会话开始时，你必须用 Read 工具实际打开以下文件，不能只看本索引表。**
+>
+> **路径基准**：以下所有路径以 `~/.workbuddy/memory/` 为根目录。例如 `topics/core/coding-style.md` → 完整路径 `~/.workbuddy/memory/topics/core/coding-style.md`。
 
 ### 第一层：始终读取（每条会话都读）
 
-| 文件 | 原因 |
+| 文件（相对于 ~/.workbuddy/memory/） | 原因 |
 |------|------|
 | `topics/core/coding-style.md` | 编码风格 |
 | `topics/core/work-habits.md` | 工作习惯 |
@@ -27,7 +29,7 @@
 
 ### 第二层：按任务领域读取
 
-> 根据用户第一条消息涉及的技术栈，读取对应文件：
+> 根据用户第一条消息涉及的技术栈，读取以下文件（路径同样相对于 `~/.workbuddy/memory/`）：
 
 | 用户提到 | 必须读取 |
 |----------|----------|
