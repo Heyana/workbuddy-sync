@@ -134,6 +134,7 @@ knowledge/           → 技术深度知识（why/how-to），详见下方 📚 
 | ffmpeg | `knowledge/ffmpeg.md` | NVENC (RTX 4070) 参数、GPU 管线、C++ 集成 (osvtoolbox) |
 | WebDAV 同步 | `knowledge/webdav-sync.md` | 文件级增量同步、多账号、manifest 设计、冲突处理 |
 | Skills 生态 | `knowledge/skills-ecosystem.md` | skills 市场调研、已安装列表、依赖关系、触发场景表 |
+| 字体 & Web 排版 | `knowledge/fonts.md` | 阿里巴巴普惠体、pyftsubset 裁剪、woff2 压缩、CJK 体积控制 |
 
 ### ⚠️ AI 维护规则（必读）
 
