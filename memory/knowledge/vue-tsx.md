@@ -135,9 +135,60 @@ src/
 | `__vccOpts` 路由报错 | 组件未 export default | 加 `export default` |
 | reka-ui 行为异常 | .vue 下 slot scoping 问题 | 切 TSX |
 | 反复翻车的组件 | 猜行为而非看源码 | 直接读 reka-ui / vaul-vue 源码 |
-
-（TODO：补充更多 TSX 实战经验，特别是与 reka-ui 组合时的坑）
+| `onChange` 回调收到 `[object Event]` | emits 名以 `on` 开头，外部监听时被当成 DOM 原生事件 | 见下方详解 |
 
 ---
 
-_最后更新：2026-06-23 | 初建，从 coding-style.md 提取 TSX 规则 + ZUI v2 上下文_
+## ⚠️ emits 命名不得以 `on` 开头
+
+### 问题现象
+
+```tsx
+// ZInputV1 内部
+emits: ['onChange', ...]
+emit('onChange', val)  // 发出字符串 val
+
+// 外部消费
+<ZInputV1 onChange={(e) => console.log(e)} />
+// 打印 [object Event]  ← 收到的是原生 DOM change 事件！
+```
+
+### 根因
+
+Vue 的事件绑定规则：JSX/模板中的 `onXxx` → 监听名为 `xxx` 的事件。
+当 `emits: ['onChange']` 时，外部要监听它必须写 `onOnChange`。
+而 `onChange` 这个写法已被 Vue 解释为监听原生 DOM 的 `change` 事件 → 收到 Event 对象。
+
+```
+emits 声明名      → 外部监听属性名
+'change'         → onChange      ✅ 自然
+'update:value'   → onUpdate:value
+'onChange'       → onOnChange    ⚠️ 丑陋（命名 bug）
+```
+
+### 修复方案
+
+**根本修复**：emits 名永远不要加 `on` 前缀：
+
+```ts
+// ✅ 正确
+emits: ['change', 'pressEnter', 'update:value']
+emit('change', val)
+
+// 外部
+<MyInput onChange={(v: string) => { ... }} />
+```
+
+**临时绕过**（不改组件时）：
+
+```tsx
+<ZInputV1 onOnChange={(v: string) => { ... }} />
+```
+
+### 兼容适配层注意
+
+ZUI v1 兼容层 `ZInputV1` 存在此问题（`emits: ['onChange']`），外部调用必须用 `onOnChange`。
+
+---
+
+_最后更新：2026-06-24 | 新增 emits 命名不得以 `on` 开头的规则与 [object Event] 坑_
