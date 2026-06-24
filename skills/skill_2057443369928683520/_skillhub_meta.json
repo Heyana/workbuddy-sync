@@ -1,0 +1,18 @@
+{
+  "name": "grill-me",
+  "installedAt": 1782269557499,
+  "source": "marketplace",
+  "version": "1.0.0",
+  "skillId": "skill_2057443369928683520",
+  "examples_zh": [
+    "grill me，帮我审查这个方案",
+    "我想做个新功能，先帮我追问一遍",
+    "挑战我的设计，找出盲点"
+  ],
+  "examples_en": [
+    "grill me on this plan",
+    "challenge my design decisions",
+    "stress-test this architecture"
+  ],
+  "iconSource": "letter:auto"
+}
