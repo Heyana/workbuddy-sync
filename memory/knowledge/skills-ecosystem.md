@@ -15,6 +15,41 @@
 | archive | 手动安装 | archive/ | 持久化记忆+偏好+项目上下文（CONSULT/SAVE/INGEST/QUERY/LINT） |
 | github | connector | connector-github | GitHub API 操作 |
 
+## 当前已安装 Plugins
+
+> 插件 ≠ Skill。插件位于 `~/.workbuddy/plugins/marketplaces/`，提供 `/plugin:command` 形式的斜杠命令。
+
+| Plugin | 版本 | 来源 | 位置 | 用途 |
+|--------|------|------|------|------|
+| superpowers | 4.0.3 | 官方插件市场 (Jesse Vincent) | `plugins/marketplaces/codebuddy-plugins-official/external_plugins/superpowers/` | AI 协作开发工作流：brainstorm → plan → TDD → subagent 执行 → code review → 收尾 |
+
+### superpowers 提供的命令
+
+```
+/superpowers:brainstorm    — 苏格拉底式提问，把模糊想法变设计文档
+/superpowers:write-plan    — 拆成 2-5 分钟小任务，精确到文件路径+代码+验证
+/superpowers:execute-plan  — 子代理批量执行，每批后人工检查点
+```
+
+### superpowers 包含的 14 个 skill
+
+| Skill | 阶段 |
+|-------|------|
+| brainstorming | 设计 |
+| using-git-worktrees | 隔离 |
+| writing-plans | 计划 |
+| subagent-driven-development | 执行（子代理） |
+| executing-plans | 执行（批量） |
+| test-driven-development | 测试 |
+| requesting-code-review | 审查 |
+| receiving-code-review | 审查响应 |
+| finishing-a-development-branch | 收尾 |
+| systematic-debugging | 调试 |
+| verification-before-completion | 验证 |
+| writing-skills | 元：编写 skill |
+| dispatching-parallel-agents | 元：并行代理 |
+| using-superpowers | 元：使用说明 |
+
 ## 安装渠道
 
 ### WorkBuddy 内置市场（BuiltinMarket）
