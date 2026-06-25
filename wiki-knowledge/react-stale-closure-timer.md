@@ -61,5 +61,38 @@ useEffect(() => {
 
 Rest 5 分钟倒计时视觉正确但实际不启动 → `settings.autoStartBreaks` 在旧闭包中为 `false`，新设置值被忽略。
 
+## Bug #2: setTimeLeft 更新器覆盖
+
+在上面的修复中，`handleTimerCompleteRef.current()` 仍在 `setTimeLeft` 更新器内部被调用。`handleTimerComplete` 内部会调用 `setTimeLeft(新时长)`，但更新器随后 `return 0`。React 批量处理时 `0` 覆盖了 `新时长`，导致只第一轮正常，后续轮 `timeLeft` 被钉在 0。
+
+### 修复：延迟完成标志
+
+```typescript
+const shouldCompleteRef = useRef(false);
+
+// 效果1：在更新器外部检测完成
+useEffect(() => {
+  if (shouldCompleteRef.current && timerState === 'running' && timeLeft === 0) {
+    shouldCompleteRef.current = false;
+    handleTimerCompleteRef.current();
+  }
+});
+
+// 效果2：更新器只设标志
+useEffect(() => {
+  if (timerState === 'running') {
+    interval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) { shouldCompleteRef.current = true; return 0; }
+        return prev - 1;
+      });
+    }, 1000);
+  }
+  return () => clearInterval(interval);
+}, [timerState, timerMode, settings]);
+```
+
+确保 `handleTimerComplete` 永远不在 `setTimeLeft` 更新器内部执行，避免返回值覆盖冲突。
+
 ## See Also
 - [[flowtime-stitch]]

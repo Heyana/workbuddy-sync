@@ -44,14 +44,12 @@ async function myFeature(): Promise<void> {
 - 回前台算 `timeLeft - elapsed`
 
 ### 通知栏倒计时
-- 不支持更新已有通知 → cancel + reschedule 变通
-- 每秒更新 body 文本显示剩余秒数
-- 高频操作可能被 Android 限流
 
-## 双铃声模式
-- Work 完成: 上行 C5→E5→G5（明亮、有力）
-- Rest 完成: 下行 G4→E4→C4（柔和、沉静）
+**优先方案**：使用 [[android-foreground-service]]（真正前台服务），`updateForegroundService()` 原生速度更新。
+
+**降级方案**（不推荐）：使用 `LocalNotifications` 的 cancel + reschedule 模式。
 
 ## See Also
+- [[android-foreground-service]]
 - [[capacitor-android-build]]
 - [[flowtime-stitch]]

@@ -8,6 +8,13 @@
 |------|------|
 | [[flowtime-stitch]] | React 19 极简生产力计时器，Capacitor Android 集成 | 2026-06-26 |
 
+## Android 原生
+
+| 页面 | 摘要 |
+|------|------|
+| [[capacitor-android-build]] | JDK 21 + Gradle 镜像 + SDK 配置 + 构建流程 + 排坑 | 2026-06-26 |
+| [[android-foreground-service]] | 前台服务替代 LocalNotifications，原生速度通知栏倒计时 | 2026-06-26 |
+
 ## 概念 & 模式
 
 | 页面 | 摘要 |
