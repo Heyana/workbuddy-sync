@@ -166,6 +166,8 @@ grill-me（独立，不依赖 setup）
 | ctrip | 携程问道旅行数据 | Python venv |
 | codebase-memory-mcp | 代码知识图谱（158 语言，14 工具） | v0.8.1, 二进制 `C:\Users\hzy\AppData\Local\Programs\codebase-memory-mcp\` |
 
+> ⚠️ **UI 可视化**：标准版无前端，需安装时加 `--ui`（`install.ps1 --ui`）下载 UI 版本。运行时加 `--ui` 无效——必须在安装阶段选 UI variant。UI 运行在 `http://localhost:9749`。
+
 ### codebase-memory-mcp 工具清单
 
 | 工具 | 用途 |
