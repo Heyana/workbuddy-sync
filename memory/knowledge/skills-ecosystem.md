@@ -62,7 +62,8 @@
 ### skills.sh 生态
 - 命令：`npx skills add <repo_url> --skill <name>`
 - 源：GitHub 仓库（anthropics/skills、mattpocock/skills、vercel-labs/skills 等）
-- 注意：`npx skills add` 会弹出交互式 agent 选择器，用 `-y` 跳过
+- ⚠️ **注意**：`npx skills add` 安装到 `.agents/skills/`（skills.sh 生态位置），WorkBuddy **不读这个目录**。必须手动复制到 `~/.workbuddy/skills/<name>/` 才能生效
+- `npx skills add` 会弹出交互式 agent 选择器，用 `-y` 跳过
 - 如果交互式安装卡住：直接从 GitHub raw 拉 SKILL.md → 手动写入 `~/.workbuddy/skills/<name>/SKILL.md`
 
 ### skillstore.io
