@@ -2,10 +2,22 @@
 
 > 自动维护。每次 Ingest 后 LLM 更新本文件。
 
-## 条目列表
+## 项目
 
-_暂无条目，等待首次 Ingest。_
+| 页面 | 摘要 |
+|------|------|
+| [[flowtime-stitch]] | React 19 极简生产力计时器，Capacitor Android 集成 | 2026-06-26 |
+
+## 概念 & 模式
+
+| 页面 | 摘要 |
+|------|------|
+| [[capacitor-android-build]] | JDK 21 + Gradle 镜像 + SDK 配置 + 构建流程 + 排坑 | 2026-06-26 |
+| [[capacitor-native-bridge]] | 动态 import 模式、通知/Haptics/后台追踪、Web 降级 | 2026-06-26 |
+| [[impeccable-design-critique]] | AI Slop 指纹、启发式评分、字体规则、修复优先级 | 2026-06-26 |
+| [[minimal-i18n-pattern]] | 零依赖 React i18n，模块级 t()，中英切换 | 2026-06-26 |
+| [[react-stale-closure-timer]] | useEffect + setInterval stale closure bug 及 useRef 修复 | 2026-06-26 |
 
 ---
 
-_最后更新: 2026-06-24_
+_最后更新: 2026-06-26_
