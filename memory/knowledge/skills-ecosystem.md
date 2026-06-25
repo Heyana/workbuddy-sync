@@ -13,6 +13,7 @@
 | improve-codebase-architecture | 手动安装 | improve-codebase-architecture/ | 代码架构评估与重构建议（Matt Pocock） |
 | llm-wiki | 内置市场 | skill_2053082332061896704 | 个人知识库构建（Karpathy Wiki 模式：ingest/query/lint） |
 | archive | 手动安装 | archive/ | 持久化记忆+偏好+项目上下文（CONSULT/SAVE/INGEST/QUERY/LINT） |
+| harness-engineering | skills.sh | harness-engineering/ | 仓库级 agent harness 治理，失败→持久指令（github/awesome-copilot） |
 | github | connector | connector-github | GitHub API 操作 |
 
 ## 当前已安装 Plugins

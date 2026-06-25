@@ -8,7 +8,7 @@ _暂无条目_
 _暂无条目_
 
 ## Domains
-_暂无条目_
+- [[harness-engineering]] — AI agent harness 工程：生态、安装、适用场景（2026-06-25）
 
 ## Wiki — Entities
 _暂无条目_
