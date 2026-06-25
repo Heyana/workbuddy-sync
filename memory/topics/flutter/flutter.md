@@ -7,6 +7,8 @@
   - **例外**：Stack 内部必须用 `Expanded`/`Positioned.fill`（不能用 WDiv 替代 flex-1）
 - flex-1 用 WDiv(className: 'flex-1', children: [...])，但禁止嵌套 flex-1（内部 Expanded > Expanded 冲突）
 - Spacer 禁止，用 `WDiv(className: 'flex-1')` 替代
+- **scrollPrimary + f 互斥**: `scrollPrimary: true` 生成 SingleChildScrollView，`f`(flex:1) 生成 Expanded。Expanded 只能在 Flex 内，嵌套 ScrollView 中会 ParentDataWidget 错误。scroll 页面只用 `col` 不用 `col f`
+- **Row 内均分卡片**: 不用 WDiv(className:'f')，改用父级原生 `Expanded` 包裹子 widget。Wind 的 f 在 Row 子元素内部走 LayoutBuilder → SizedBox(width:Infinity) 路径会崩
 - 浮动元素陷阱：WDiv(className: 'relative') 不能让 Positioned 工作，必须用 `Stack` 包裹
   - 正确结构：`Stack(children: [Positioned.fill(child: 主内容), Positioned(bottom: x, child: 浮动元素)])`
 - 页面只 import shadcn_flutter + fluttersdk_wind + my-wind/div
