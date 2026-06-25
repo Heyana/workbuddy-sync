@@ -25,6 +25,10 @@
 !archive-vault/
 !archive-vault/**
 
+# === codebuddy hooks & config ===
+!codebuddy/
+!codebuddy/**
+
 # Machine-specific files — each machine has its own:
 # mcp.json (paths differ), mcp-approvals.json (auto), settings.json (auto),
 # models.json (auto), project-map.md (per-machine paths), connectors/

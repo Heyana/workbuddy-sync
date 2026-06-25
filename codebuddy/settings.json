@@ -1,0 +1,17 @@
+{
+  "_note": "Portable config. On each machine, verify python3 is in PATH or replace with absolute path.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 C:/Users/hzy/.codebuddy/hooks/auto-analyze.py",
+            "timeout": 70
+          }
+        ]
+      }
+    ]
+  }
+}
