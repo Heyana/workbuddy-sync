@@ -132,3 +132,27 @@ grill-me（独立，不依赖 setup）
 - 操作：CONSULT（任务前自动查）→ SAVE（任务后自动存）→ INGEST → QUERY → LINT
 - 与 llm-wiki 互补：llm-wiki 管 wiki 知识，archive 管偏好/项目/领域上下文
 - 自动触发：任务 >2 步、涉及 auth/config、用户说"和上次一样"时自动 CONSULT
+
+## Hooks 配置
+
+- 位置：`~/.codebuddy/settings.json`（用户级）
+- 脚本：`~/.codebuddy/hooks/auto-analyze.py`
+
+### PostToolUse: auto-analyze
+
+每次 Write/Edit 文件后自动触发，根据项目框架运行对应分析工具：
+
+| 文件类型 | 检测条件 | 运行命令 |
+|----------|----------|----------|
+| `.dart` (Flutter) | `pubspec.yaml` 含 flutter | `flutter analyze` |
+| `.dart` (纯 Dart) | `pubspec.yaml` 不含 flutter | `dart analyze` |
+| `.ts`/`.tsx` (Vue) | `tsconfig.json` + vue 依赖 | `npx vue-tsc --noEmit` |
+| `.ts`/`.tsx` (纯 TS) | `tsconfig.json` 无 vue | `npx tsc --noEmit` |
+| `.vue` | `tsconfig.json` 存在 | `npx vue-tsc --noEmit` |
+| `.js`/`.mjs`/`.cjs` | `package.json` 存在 | `npx eslint <file>` |
+| `.css`/`.scss` | `package.json` 存在 | `npx stylelint <file>` |
+| `.go` | `go.mod` 存在 | `go vet ./...` |
+
+- 防抖：同一项目同一框架 30 秒内不重复运行
+- 超时：60 秒后自动终止
+- 退出码 0 = 静默通过；1 = 发现问题（展示为 warning，不阻塞）；2 = 运行错误
