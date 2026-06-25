@@ -12,6 +12,9 @@
 | WebDAV 同步 | [webdav-sync.md](webdav-sync.md) | 文件级增量同步、多账号、manifest 设计、冲突处理 |
 | Skills 生态 | [skills-ecosystem.md](skills-ecosystem.md) | skills.sh/skillstore.io 调研、已安装列表、安装渠道、Matt Pocock 生态依赖 |
 | 字体 & Web 排版 | [fonts.md](fonts.md) | 阿里巴巴普惠体、pyftsubset 裁剪、woff2 压缩、CJK 字体体积控制 |
+| Capacitor Android | [capacitor-android.md](capacitor-android.md) | JDK 21 要求、国内镜像、SDK 配置、Gradle build 流程、常见排坑 |
+| Capacitor 桥接 | [capacitor-bridge.md](capacitor-bridge.md) | 动态 import 模式、通知/Haptics/后台追踪、Web 降级、cancel+reschedule 倒计时 |
+| Impeccable 审计 | [impeccable-critique.md](impeccable-critique.md) | AI Slop 指纹、启发式评分、字体规则、修复优先级、Persona 红旗 |
 
 ## 维护规则
 

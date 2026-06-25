@@ -6,4 +6,4 @@
 - Flutter 'dots' 个人追踪 App：Timeline 功能开发中
 - Wails3 demo（wails3_test_vue_ts）：Vue3+TSX+Go / v3.0.0-alpha2.104，文件拖放+窗口控制+Frameless，前端已迁 shadcn-vue
 - PureRaw：照片筛选工具，Wails3 + shadcn-vue + Go，三栏布局+快捷键评分(1-5)+导航(←→)
-- Flowtime：Flutter 桌面番茄钟，上班/下班循环计时，Wind 1.1 + shadcn_flutter + signals，SQLite 持久化
+- Flowtime Stitch：React 19 + Vite 6 + Tailwind v4 个人生产力计时器，Liquid Round 设计系统，已集成 Capacitor Android (APK 4.2MB)
