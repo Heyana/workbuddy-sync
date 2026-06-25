@@ -22,6 +22,14 @@
 >
 > 使用新工具/网站/渠道 → 立刻记入对应 knowledge 文件，不等提醒（URL 必须可点击）。
 
+> 🧠 **代码探索优先用知识图谱**：探索代码库结构时，优先使用 codebase-memory-mcp 工具（已索引的项目）：
+> - 查函数/类/路由定义 → `search_graph`，不要 Grep + Read
+> - 追踪调用链 → `trace_path`，不要逐文件翻
+> - 理解项目结构 → `get_architecture`
+> - 代码搜索 → `search_code`（图增强，非原始 grep）
+> - 语义搜索 → `search_graph(semantic_query=...)`
+> - 仅当 MCP 无结果或需读完整源码时才回退到 Grep/Glob/Read
+
 ## 🚀 会话启动协议（每个新会话必须执行）
 
 > ⚠️ **以下不是建议，是指令。新会话开始时，你必须用 Read 工具实际打开以下文件，不能只看本索引表。**
