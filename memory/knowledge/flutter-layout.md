@@ -39,6 +39,31 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 - ❌ 禁止 Flutter `Spacer()`
 - ✅ 替换为：`WDiv(className: 'flex-1')`
 
+### 可滚动页面（scrollPrimary 陷阱）
+
+- ❌ **`WDiv(className: 'col f', scrollPrimary: true)` 会炸**：`scrollPrimary` 生成 `SingleChildScrollView`，而 `f`/`flex-1` 生成 `Expanded`/`Flexible`，Expanded 不能在 ScrollView 中 → `Incorrect use of ParentDataWidget` + overflow
+- ❌ **`WDiv(className: 'col', scrollPrimary: true)` 子内容超出也会 overflow**：scrollPrimary 的 ScrollView 给子 Column 有限高度约束，内容超了就溢出
+- ✅ **推荐模式**：原生 `SingleChildScrollView` 包 `WDiv`，ScrollView 给无限高度约束，不会 overflow：
+  ```dart
+  SingleChildScrollView(
+    child: WDiv(className: 'col gap-6 p-6', children: [...]),
+  )
+  ```
+- **教训**：scroll 页面只用 `col` 不用 `col f`；要滚动就直接用原生 `SingleChildScrollView` 替代 `scrollPrimary: true`
+
+### 自定 alias `f` 在 Row 中炸
+
+- ❌ **`WDiv(className: 'f')` 放在 `WDiv(className: 'row')` 内会 `BoxConstraints forces an infinite width`**
+- **根因**：若 `f` alias 定义为 `w-full h-full`，`w-full` 生成 `SizedBox(width: double.infinity)`；Row 给非 flex 子 loose 宽度约束（maxWidth=Infinity），两者叠加出 `minWidth=Infinity` 非法约束
+- ✅ **Row 内要用 flex 撑满必须用 `flex-1`**（生成 `Flexible`，走 Row 正常布局路线），不能用 `f`
+- ⚠️ 检查 `wind_theme.dart` 里自定 alias 的实际展开值，`w-full`/`h-full` 类的 alias 不能用在 Row/Col 的非 flex 子中
+
+### 页面背景色
+
+- ❌ **shadcn `Scaffold` 不要设 `backgroundColor: Colors.transparent`**：Wind 的 `toThemeData()` 设 `canvasColor: Colors.transparent`，Scaffold 透明后一路透到 Flutter canvas 默认黑色
+- ✅ **Scaffold 不设 backgroundColor**，走默认 `theme.colorScheme.background`（light: 浅色, dark: 深色）
+- ✅ 每个页面可包一层 shadcn `Scaffold`，自动拿到正确的背景色（参考 test_wind_1_1 做法）
+
 ### Stack vs WDiv relative
 
 - ❌ `WDiv(className: 'relative')` **不能让 Positioned 工作**——Wind 的 relative 是 CSS 语义，不影响 Flutter 布局
@@ -69,9 +94,11 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 
 | 报错 | 根因 | 修复 |
 |------|------|------|
-| `Incorrect use of ParentDataWidget` | 嵌套 flex-1 / 混用 Wind 和原生 Flex | 去掉嵌套 flex-1；或改用 Stack |
+| `Incorrect use of ParentDataWidget` | 嵌套 flex-1 / 混用 Wind 和原生 Flex / scrollPrimary+flex | 去掉嵌套 flex-1；或改用 Stack；scroll 页面去掉 `f` |
 | Positioned 不生效 | 父级是 WDiv 而非 Stack | 改用 Stack 包裹 |
-| `A RenderFlex overflowed` | 内容超出 flex 容器 | 加 `overflow-hidden` 或限制高度 |
+| `A RenderFlex overflowed` | 内容超出 flex 容器 / scrollPrimary 有限高度约束 | 加 `overflow-hidden` 或限制高度；或改用原生 `SingleChildScrollView` |
+| `BoxConstraints forces an infinite width` | `f`/`w-full` alias 放在 Row 非 flex 子中 | Row 内用 `flex-1` 而非 `f` |
+| light 模式背景纯黑 | Scaffold 设了 `Colors.transparent` 透到 Flutter canvas | 删掉 `backgroundColor: Colors.transparent`，走默认 `theme.colorScheme.background` |
 
 ---
 
@@ -90,6 +117,11 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 ### asset_manager
 - （TODO：补充布局相关经验）
 
+### Flowtime (番茄钟)
+- shadcn Scaffold 不能设 `backgroundColor: Colors.transparent`，否则透底看到 Flutter canvas 黑色
+- 可滚动页面用原生 `SingleChildScrollView(child: WDiv(className: 'col gap-6'))`，不用 `scrollPrimary: true`
+- 自定 alias `f`（→ `w-full h-full`）在 Row 非 flex 子中会触发 infinite width，Row 内撑满用 `flex-1`
+
 ---
 
-_最后更新：2026-06-23 | 初建，从 flutter.md 提取核心规则 + 补充项目特定经验_
+_最后更新：2026-06-25 | 补充 scrollPrimary 陷阱、f alias 在 Row 中炸、页面背景色规则（Flowtime 项目）_
