@@ -156,3 +156,31 @@ grill-me（独立，不依赖 setup）
 - 防抖：同一项目同一框架 30 秒内不重复运行
 - 超时：60 秒后自动终止
 - 退出码 0 = 静默通过；1 = 发现问题（展示为 warning，不阻塞）；2 = 运行错误
+
+## MCP 服务器
+
+| MCP | 用途 | 配置 |
+|-----|------|------|
+| playwright | 浏览器自动化 | npx @playwright/mcp |
+| RedNote-MCP | 小红书内容读取 | npm 包 |
+| ctrip | 携程问道旅行数据 | Python venv |
+| codebase-memory-mcp | 代码知识图谱（158 语言，14 工具） | v0.8.1, 二进制 `C:\Users\hzy\AppData\Local\Programs\codebase-memory-mcp\` |
+
+### codebase-memory-mcp 工具清单
+
+| 工具 | 用途 |
+|------|------|
+| `index_repository` | 索引代码库（full/moderate/fast/cross-repo） |
+| `search_graph` | 结构化搜索函数/类/路由 |
+| `trace_path` | 调用链追踪（calls/data_flow/cross_service） |
+| `query_graph` | Cypher 图查询（性能热点/复杂度检测） |
+| `get_architecture` | 架构概览 |
+| `detect_changes` | Git 变更影响分析 |
+| `semantic_query` | 语义向量搜索 |
+| `search_code` | 图增强代码搜索 |
+| `get_code_snippet` | 读取函数/类源码 |
+| `list_projects` | 列出已索引项目 |
+| `index_status` | 索引状态查询 |
+| `delete_project` | 删除索引 |
+| `manage_adr` | 架构决策记录 |
+| `ingest_traces` | 运行时调用追踪 |
