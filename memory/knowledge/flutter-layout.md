@@ -64,6 +64,13 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 - ✅ **Scaffold 不设 backgroundColor**，走默认 `theme.colorScheme.background`（light: 浅色, dark: 深色）
 - ✅ 每个页面可包一层 shadcn `Scaffold`，自动拿到正确的背景色（参考 test_wind_1_1 做法）
 
+### Flutter 资源目录
+
+- ❌ **pubspec.yaml 声明了 asset 目录但目录不存在 → Windows 构建直接挂**：`error: unable to find directory entry in pubspec.yaml: xxx/`（MSBuild `flutter_assemble.vcxproj` exit code -1）
+- ❌ **空目录也不行**：Flutter asset bundler 不接受空目录，至少需要一个真实文件
+- ✅ 声明了 asset 目录就必须创建，并放入至少一个真实文件（不能只有 `.gitkeep`）
+- **占位音效文件**：用 Python 生成最小合法静默 MP3（MPEG1 Layer3 128kbps 44100Hz 帧头 `0xFF 0xFB 0x90 0x00` + 零数据，约 416 字节），audioplayers 播放无声不报错，后续替换真实音效即可
+
 ### Stack vs WDiv relative
 
 - ❌ `WDiv(className: 'relative')` **不能让 Positioned 工作**——Wind 的 relative 是 CSS 语义，不影响 Flutter 布局
@@ -98,7 +105,8 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 | Positioned 不生效 | 父级是 WDiv 而非 Stack | 改用 Stack 包裹 |
 | `A RenderFlex overflowed` | 内容超出 flex 容器 / scrollPrimary 有限高度约束 | 加 `overflow-hidden` 或限制高度；或改用原生 `SingleChildScrollView` |
 | `BoxConstraints forces an infinite width` | `f`/`w-full` alias 放在 Row 非 flex 子中 | Row 内用 `flex-1` 而非 `f` |
-| light 模式背景纯黑 | Scaffold 设了 `Colors.transparent` 透到 Flutter canvas | 删掉 `backgroundColor: Colors.transparent`，走默认 `theme.colorScheme.background` |
+| `unable to find directory entry in pubspec.yaml` | 声明了 asset 目录但不存在或为空 | 创建目录并放入至少一个真实文件 |
+| Windows MSBuild `flutter_assemble.vcxproj` exit -1 | 同上，资源目录缺失 | 同上 |
 
 ---
 
@@ -124,4 +132,4 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 
 ---
 
-_最后更新：2026-06-25 | 补充 scrollPrimary 陷阱、f alias 在 Row 中炸、页面背景色规则（Flowtime 项目）_
+_最后更新：2026-06-25 | 补充 scrollPrimary 陷阱、f alias 在 Row 中炸、页面背景色规则、asset 目录缺失构建失败、静默 MP3 占位（Flowtime 项目）_
