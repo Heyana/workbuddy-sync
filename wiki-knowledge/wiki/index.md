@@ -48,6 +48,7 @@
 |------|------|
 | [[ego-lite-browser]] | AI Agent 浏览器，共享登录态 — 不采用（有 playwright） | 2026-06-26 |
 | [[cli-anything]] | GUI 软件自动生成 CLI — 不采用（已有原生 CLI 工具） | 2026-06-26 |
+| [[ui-ux-pro-max]] | 67 风格/161 配色/57 字体，设计素材 Skill，MIT 免费 — 采用 | 2026-06-26 |
 
 ---
 
