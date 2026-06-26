@@ -27,7 +27,7 @@ Technical stack: shadcn_flutter + fluttersdk_wind (^1.1.0) + LucideIcons + proje
 | `TextFormField` | `TextField` (from shadcn) |
 | `TextButton` | `TextButton` (from shadcn) or `Button.text()` |
 | `AlertDialog` | `AlertDialog` (from shadcn) |
-| `Spacer` / `Flexible` / `Expanded` | `WDiv(className: 'flex-1')` |
+| `Spacer` / `Flexible` / `Expanded` | `WDiv(className: 'flex-1')` (**exception**: `Stack` 内部允许 `Expanded` / `Positioned.fill`) |
 | `Navigator.pop(context)` | `Navigator.pop(context)` (ok — from widgets) |
 
 ### Imports
