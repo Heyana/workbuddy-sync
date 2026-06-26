@@ -7,3 +7,4 @@
 - Wails3 demo（wails3_test_vue_ts）：Vue3+TSX+Go / v3.0.0-alpha2.104，文件拖放+窗口控制+Frameless，前端已迁 shadcn-vue
 - PureRaw：照片筛选工具，Wails3 + shadcn-vue + Go，三栏布局+快捷键评分(1-5)+导航(←→)
 - editorV2（run-scene-v2 + 3d-editor-2.0）：3D 场景编辑器，TypeScript + Vue 3 + Three.js，两子项目独立 git 仓库
+- workbuddy-sync（D:\hxy\github\workbuddy-sync）：用户级记忆/skill 同步仓库，push 到 GitHub
