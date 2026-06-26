@@ -7,6 +7,7 @@
 | 页面 | 摘要 |
 |------|------|
 | [[flowtime-stitch]] | React 19 极简生产力计时器，Capacitor Android 集成 | 2026-06-26 |
+| [[editorv2-architecture-analysis]] | Web 3D 编辑器深度架构分析，183k 行，5 限界上下文，重构路线图 | 2026-06-26 |
 
 ## Android 原生
 
@@ -26,6 +27,13 @@
 | [[react-stale-closure-timer]] | useEffect + setInterval stale closure bug 及 useRef 修复 | 2026-06-26 |
 | [[code-knowledge-graph-pattern]] | 知识图谱替代逐文件代码探索，120x token 节省 | 2026-06-26 |
 | [[skills-orchestration]] | 多 Skill 编排：按开发阶段分派不同 Skill 组合 | 2026-06-26 |
+
+## 架构 & 工程实践
+
+| 页面 | 摘要 |
+|------|------|
+| [[3d-editor-engine-patterns]] | 3D 编辑器引擎设计模式：Facade/回调总线/双模式/快照系统 | 2026-06-26 |
+| [[vendoring-anti-pattern]] | 三方库 Vendoring 防升级反模式：LiteGraph 22 处魔改教训 | 2026-06-26 |
 
 ---
 

@@ -22,6 +22,16 @@
 
 覆盖领域：AI 编程工具链、代码探索模式、技能组合策略。
 
+## [2026-06-26] ingest | editorV2 深度架构分析
+
+从 `raw/editorV2-architecture-analysis.md` 摄入 183k 行 3D 编辑器项目的深度分析报告。
+- 新增 [[editorv2-architecture-analysis]] — 项目摘要 + 重构优先级矩阵
+- 新增 [[3d-editor-engine-patterns]] — 提炼 4 个 3D 引擎设计模式
+- 新增 [[vendoring-anti-pattern]] — LiteGraph 魔改防止升级的教训
+- 更新 index.md — 新增"架构 & 工程实践"分类
+
+覆盖领域：3D引擎 / Vue3 / TypeScript / 重构 / vendoring。
+
 ## [2026-06-26] update | Android Foreground Service + Timer bugs
 
 - 新增 [[android-foreground-service]] — 前台服务方案替代 LocalNotifications
