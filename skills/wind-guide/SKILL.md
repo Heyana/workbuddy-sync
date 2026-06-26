@@ -14,18 +14,35 @@ Technical stack: shadcn_flutter + fluttersdk_wind (^1.1.0) + LucideIcons + proje
 
 ## Core Rules
 
+### ⛔ BANNED: flutter/material.dart
+
+`package:flutter/material.dart` is FORBIDDEN in all UI files. The only exception is `main.dart` (MaterialApp.router requires it). All other files must NOT import it.
+
+**Consequence**: Never use these Material widgets — always use shadcn equivalents:
+
+| ❌ Material (banned) | ✅ shadcn (use this) |
+|---------------------|---------------------|
+| `Slider` / `SliderTheme` | `ControlledSlider` with `SliderController` |
+| `TextField` | `TextField` (from shadcn) |
+| `TextFormField` | `TextField` (from shadcn) |
+| `TextButton` | `TextButton` (from shadcn) or `Button.text()` |
+| `AlertDialog` | `AlertDialog` (from shadcn) |
+| `Spacer` / `Flexible` / `Expanded` | `WDiv(className: 'flex-1')` |
+| `Navigator.pop(context)` | `Navigator.pop(context)` (ok — from widgets) |
+
 ### Imports
 
 Every UI file must use this exact import pattern:
 
 ```dart
-import 'package:flutter/material.dart' hide Colors, Theme, Expanded;
 import 'package:fluttersdk_wind/fluttersdk_wind.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart'
-    hide ThemeMode, LucideIcons, Stack, Positioned, CircularProgressIndicator;
+    hide ThemeMode, LucideIcons, Stack, Positioned;
 import 'package:signals/signals_flutter.dart';
 ```
+
+If a file truly needs a Flutter widget that shadcn doesn't provide (eg. `Stack`, `Positioned`), import `package:flutter/widgets.dart` instead — never `material.dart`.
 
 Never import `material.dart` outside `main.dart`. Never use Material/Forui components.
 
