@@ -17,6 +17,7 @@
 | prd-development | skills.sh | .agents/skills/prd-development/ | 结构化 PRD 生成：问题→用户→方案→成功指标（Dean Peters） |
 | prd-test-writer | skills.sh | .agents/skills/prd-test-writer/ | PRD + 测试用例双文档，先读代码再写（yunshu0909） |
 | refactoring-guide | skillsmp.com (GitHub) | refactoring-guide/ | 20+ 检测信号 + 5 类原则文档（结构耦合/类型设计/架构/模块边界/战术动作），9 级连接散度，LLM 盲区修正（terrylica） |
+| ui-ux-pro-max | uipro-cli | ui-ux-pro-max/ | 67 风格/161 配色/57 字体，设计素材生成，MIT 免费。配合 impeccable 使用（Pro Max 生成方案，impeccable 审查） |
 | repo-analyzer | skills.sh (GitHub) | repo-analyzer/ | 8 阶段流水线深度架构分析（30%/60%/90% 三档），并行子代理 + Mermaid 架构图 + 竞品对比（yzddmr6） |
 
 ## 当前已安装 Plugins
