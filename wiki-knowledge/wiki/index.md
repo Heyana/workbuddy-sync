@@ -11,6 +11,7 @@
 | [[media-manager-backend]] | Go + Gin + GORM + SQLite 后端，双数据库架构，Wails v3 迁移中 | 2026-06-26 |
 | [[media-manager-frontend]] | Electron + Vue3 + TSX 前端，Core 单例体系，Preload 安全边界 | 2026-06-26 |
 | [[media-manager-fullstack]] | 前后端联合综合分析，架构一致性发现，Wails 迁移影响矩阵 | 2026-06-26 |
+| [[screen-clip-tool]] | Qt 6 截图+剪贴板工具，标注编辑器，MSVC 环境实录 | 2026-06-27 |
 
 ## Android 原生
 
@@ -23,6 +24,7 @@
 
 | 页面 | 摘要 |
 |------|------|
+| [[qt6-windows-dev-setup]] | Qt 6 Windows 开发环境完整搭建：MSVC + aqtinstall + CMake + 高 DPI 修复 | 2026-06-27 |
 | [[dual-database-pattern]] | 系统库 + 业务库分离模式，SQLite PRAGMA 调优，多素材库支持 | 2026-06-26 |
 | [[core-singleton-pattern]] | Vue3 Core 星型调度 + Manager 单例，替代大型 Store 方案 | 2026-06-26 |
 | [[wails-v3-migration]] | Electron → Wails v3 渐进迁移策略、影响矩阵、关键陷阱 | 2026-06-26 |
@@ -42,14 +44,15 @@
 | [[3d-editor-engine-patterns]] | 3D 编辑器引擎设计模式：Facade/回调总线/双模式/快照系统 | 2026-06-26 |
 | [[vendoring-anti-pattern]] | 三方库 Vendoring 防升级反模式：LiteGraph 22 处魔改教训 | 2026-06-26 |
 
-## 工具评估
+## 工具评估 & 对比
 
 | 页面 | 摘要 |
 |------|------|
+| [[cross-platform-gui-comparison]] | 20+ 跨平台 GUI 框架全景对比：主流+小众，即时vs保留，场景选型 | 2026-06-27 |
 | [[ego-lite-browser]] | AI Agent 浏览器，共享登录态 — 不采用（有 playwright） | 2026-06-26 |
 | [[cli-anything]] | GUI 软件自动生成 CLI — 不采用（已有原生 CLI 工具） | 2026-06-26 |
 | [[ui-ux-pro-max]] | 67 风格/161 配色/57 字体，设计素材 Skill，MIT 免费 — 采用 | 2026-06-26 |
 
 ---
 
-_最后更新: 2026-06-26_
+_最后更新: 2026-06-27_
