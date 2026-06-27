@@ -69,7 +69,6 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 - ❌ **pubspec.yaml 声明了 asset 目录但目录不存在 → Windows 构建直接挂**：`error: unable to find directory entry in pubspec.yaml: xxx/`（MSBuild `flutter_assemble.vcxproj` exit code -1）
 - ❌ **空目录也不行**：Flutter asset bundler 不接受空目录，至少需要一个真实文件
 - ✅ 声明了 asset 目录就必须创建，并放入至少一个真实文件（不能只有 `.gitkeep`）
-- **占位音效文件**：用 Python 生成最小合法静默 MP3（MPEG1 Layer3 128kbps 44100Hz 帧头 `0xFF 0xFB 0x90 0x00` + 零数据，约 416 字节），audioplayers 播放无声不报错，后续替换真实音效即可
 
 ### Stack vs WDiv relative
 
@@ -97,6 +96,50 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 
 ---
 
+## shadcn_flutter 组件迁移对照
+
+> 所有 `package:flutter/material.dart` widget 在 shadcn 环境无效（无 Material 祖先），必须用等效替代。
+
+| ❌ Material | ✅ shadcn |
+|-----------|---------|
+| `TextField` / `TextFormField` | shadcn `TextField` (import from shadcn_flutter) |
+| `Slider` / `SliderTheme` | `ControlledSlider` + `SliderController` + `SliderValue.single()` |
+| `TextButton` | shadcn `TextButton` 或 `Button.text()` |
+| `AlertDialog` | shadcn `AlertDialog` |
+| `Spacer` / `Flexible` | `WDiv(className: 'flex-1')` |
+| `Expanded` | `WDiv(className: 'flex-1')` (例外: Stack 内部可用) |
+| `InputDecoration` | shadcn TextField 用 `hintText` / `BoxDecoration` |
+
+---
+
+## audioplayers 音频
+
+- `AssetSource` 自动前置 `assets/`，路径应写 `sounds/bell.wav` 而非 `assets/sounds/bell.wav`
+- WAV 文件可用 Python `wave` + `math.sin` 合成
+
+---
+
+## Google Fonts 陷阱
+
+- `google_fonts` 在移动端首次冷启动同步下载字体，无网阻塞渲染管线 → 白屏
+- 不要在主路径用 `GoogleFonts.xxxTextTheme()`，用自带的 TTF 字体
+
+---
+
+## Android 通知 (flutter_local_notifications v22)
+
+> 必须精确按官方文档做，缺一步就不弹通知。
+
+1. **通知图标**：必须创建 `res/drawable/app_icon.png`（不能用 `@mipmap/ic_launcher`），加 `res/raw/keep.xml` 防 R8 裁剪
+2. **AndroidManifest**：必须声明 `POST_NOTIFICATIONS` + `VIBRATE` + 3 个 receiver（ScheduledNotification*, ActionBroadcast*）
+3. **build.gradle.kts**：必须开 `isCoreLibraryDesugaringEnabled = true` + desugar 依赖 + `androidx.window:window:1.0.0` + `multiDexEnabled = true`
+4. **初始化**：`AndroidInitializationSettings('app_icon')`（纯资源名, 不加前缀）
+5. **AndroidNotificationDetails**：`icon: 'app_icon'`（不加 `@drawable/` 前缀）
+6. **权限**：Android 13+ 需在 initialize 后调用 `requestNotificationsPermission()`
+7. **新资源 hot restart 不生效**，必须 `flutter run` 完整重装 APK
+
+---
+
 ## 常见报错速查
 
 | 报错 | 根因 | 修复 |
@@ -106,7 +149,8 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 | `A RenderFlex overflowed` | 内容超出 flex 容器 / scrollPrimary 有限高度约束 | 加 `overflow-hidden` 或限制高度；或改用原生 `SingleChildScrollView` |
 | `BoxConstraints forces an infinite width` | `f`/`w-full` alias 放在 Row 非 flex 子中 | Row 内用 `flex-1` 而非 `f` |
 | `unable to find directory entry in pubspec.yaml` | 声明了 asset 目录但不存在或为空 | 创建目录并放入至少一个真实文件 |
-| Windows MSBuild `flutter_assemble.vcxproj` exit -1 | 同上，资源目录缺失 | 同上 |
+| `No Material widget found` | 在 shadcn 环境下用了 Material widget | 换 shadcn 等效组件（见上方迁移表） |
+| `setSmallIcon NPE` / `invalid_icon` | Android 通知缺少 drawable 图标 | 创建 `drawable/app_icon.png` + `keep.xml` |
 
 ---
 
@@ -114,22 +158,13 @@ WDiv(className: 'flex flex-col gap-4 p-4', children: [
 
 ### PureRaw (pureraw_flutter)
 - liquid_glass_widgets + Wind 混用
-- Liquid Glass 效果组件不要放在 WDiv flex-1 内部——玻璃效果依赖特定布局上下文
-- （TODO：补充更多 liquid_glass + Wind 混用经验）
-
-### dots (生活追踪)
-- Timeline 滚动加载时出现过 `ParentDataWidget` 错误
-- 解决：确保 ListView 内部不使用 flex-1，改为固定高度或 `shrinkWrap: true`
-- （TODO：补充最终修复方案）
-
-### asset_manager
-- （TODO：补充布局相关经验）
+- Liquid Glass 效果组件不要放在 WDiv flex-1 内部
 
 ### Flowtime (番茄钟)
-- shadcn Scaffold 不能设 `backgroundColor: Colors.transparent`，否则透底看到 Flutter canvas 黑色
-- 可滚动页面用原生 `SingleChildScrollView(child: WDiv(className: 'col gap-6'))`，不用 `scrollPrimary: true`
-- 自定 alias `f`（→ `w-full h-full`）在 Row 非 flex 子中会触发 infinite width，Row 内撑满用 `flex-1`
+- shadcn Scaffold 不能设 `backgroundColor: Colors.transparent`
+- 可滚动页面用原生 `SingleChildScrollView`，不用 `scrollPrimary: true`
+- `f` alias 在 Row 非 flex 子中会触发 infinite width，Row 内撑满用 `flex-1`
+- ⚠️ 绝对禁止 `import material.dart` 在任何 UI 文件
 
 ---
-
-_最后更新：2026-06-25 | 补充 scrollPrimary 陷阱、f alias 在 Row 中炸、页面背景色规则、asset 目录缺失构建失败、静默 MP3 占位（Flowtime 项目）_
+_最后更新：2026-06-27 | shadcn 迁移表、audio path、Google Fonts、Android 通知、Material 禁令_
