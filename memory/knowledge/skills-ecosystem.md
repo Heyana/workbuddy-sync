@@ -19,6 +19,7 @@
 | refactoring-guide | skillsmp.com (GitHub) | refactoring-guide/ | 20+ 检测信号 + 5 类原则文档（结构耦合/类型设计/架构/模块边界/战术动作），9 级连接散度，LLM 盲区修正（terrylica） |
 | ui-ux-pro-max | uipro-cli | ui-ux-pro-max/ | 67 风格/161 配色/57 字体，设计素材生成，MIT 免费。配合 impeccable 使用（Pro Max 生成方案，impeccable 审查） |
 | repo-analyzer | skills.sh (GitHub) | repo-analyzer/ | 8 阶段流水线深度架构分析（30%/60%/90% 三档），并行子代理 + Mermaid 架构图 + 竞品对比（yzddmr6） |
+| codebase-cartographer | skillsmp (GitHub) | codebase-cartographer/ | 生成 .codemap/ 模块化导航地图，git 增量刷新，Agent 消费友好（going-haywire） |
 
 ## 当前已安装 Plugins
 
@@ -114,6 +115,7 @@ grill-me（独立，不依赖 setup）
 | 审查代码架构 | improve-codebase-architecture |
 | 激进重构/深度耦合分析/模块拆分 | refactoring-guide |
 | 深度理解项目架构/生成架构报告 | repo-analyzer |
+| 生成项目清单/代码导航地图/后续开发参考 | codebase-cartographer |
 | 新建/重设计 UI 页面 | frontend-design |
 | 生成好看的 UI 组件 | impeccable |
 | AI 图片生成 | nano-banana-pro |

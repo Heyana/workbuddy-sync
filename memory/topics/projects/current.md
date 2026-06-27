@@ -8,3 +8,4 @@
 - PureRaw：照片筛选工具，Wails3 + shadcn-vue + Go，三栏布局+快捷键评分(1-5)+导航(←→)
 - editorV2（run-scene-v2 + 3d-editor-2.0）：3D 场景编辑器，TypeScript + Vue 3 + Three.js，两子项目独立 git 仓库
 - workbuddy-sync（D:\hxy\github\workbuddy-sync）：用户级记忆/skill 同步仓库，push 到 GitHub
+- cat-catch（D:\hxy\github\cat-catch）：浏览器资源嗅探扩展 fork，移除抖音过滤，upstream 追踪原仓库 xifangczy/cat-catch

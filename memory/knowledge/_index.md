@@ -15,6 +15,7 @@
 | Capacitor Android | [capacitor-android.md](capacitor-android.md) | JDK 21 要求、国内镜像、SDK 配置、Gradle build 流程、常见排坑 |
 | Capacitor 桥接 | [capacitor-bridge.md](capacitor-bridge.md) | 动态 import 模式、通知/Haptics/后台追踪、Web 降级、cancel+reschedule 倒计时 |
 | Impeccable 审计 | [impeccable-critique.md](impeccable-critique.md) | AI Slop 指纹、启发式评分、字体规则、修复优先级、Persona 红旗 |
+| Chrome Extension | [chrome-extension.md](chrome-extension.md) | MV3 offscreen/SW API 限制、跨上下文下载模式、fetch/CORS 排坑 |
 
 ## 维护规则
 
